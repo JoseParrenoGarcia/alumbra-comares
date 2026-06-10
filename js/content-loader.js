@@ -51,6 +51,37 @@ async function populateServices() {
   });
 }
 
+async function populateEvents() {
+  const data = await loadJSON('content/events.json');
+  document.getElementById('events-heading').textContent = data.heading.es;
+
+  const grid = document.getElementById('events-grid');
+  if (!data.items || data.items.length === 0) {
+    grid.innerHTML = '<p class="events-empty">Próximamente nuevos eventos y talleres.</p>';
+    return;
+  }
+
+  data.items.forEach((event, i) => {
+    const card = document.createElement('div');
+    card.className = 'event-card reveal';
+    card.style.transitionDelay = `${i * 80}ms`;
+
+    const dateText = event.date === '__PLACEHOLDER__' ? 'Fecha por confirmar' : event.date;
+    const locationText = (event.location?.es === '__PLACEHOLDER__' || !event.location?.es) ? 'Valencia' : event.location.es;
+
+    card.innerHTML = `
+      <div class="event-card__header">
+        <span class="event-card__date${event.placeholder ? ' event-card__date--tbc' : ''}">${dateText}</span>
+        <span class="event-card__location">${locationText}</span>
+      </div>
+      <h3 class="event-card__title">${event.title.es}</h3>
+      <p class="event-card__desc">${event.description.es}</p>
+      <a href="#contacto" class="btn btn-primary event-card__cta">Solicitar información</a>
+    `;
+    grid.appendChild(card);
+  });
+}
+
 function revealSection(id) {
   document.querySelectorAll(`#${id} .reveal`).forEach(el => el.classList.add('visible'));
 }
@@ -66,4 +97,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadSection('servicios', 'sections/servicios.html');
   await populateServices();
   revealSection('servicios');
+  await loadSection('eventos', 'sections/eventos.html');
+  await populateEvents();
+  revealSection('eventos');
 });
