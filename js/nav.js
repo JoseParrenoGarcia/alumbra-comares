@@ -13,10 +13,15 @@ window.addEventListener('scroll', () => {
 // Mobile menu toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navOverlay = document.querySelector('.nav-overlay');
+const navOverlayClose = document.querySelector('.nav-overlay-close');
 const navOverlayLinks = document.querySelectorAll('.nav-overlay-links a');
 
 navToggle.addEventListener('click', () => {
   navOverlay.classList.toggle('open');
+});
+
+navOverlayClose.addEventListener('click', () => {
+  navOverlay.classList.remove('open');
 });
 
 // Close menu when a link is clicked

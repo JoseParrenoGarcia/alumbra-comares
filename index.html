@@ -19,11 +19,14 @@
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <div class="nav-lang">
-      <button class="lang-btn active" data-lang="es">🇪🇸 ES</button>
-      <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+      <select class="lang-select" aria-label="Idioma">
+        <option value="es" selected>🇪🇸 ES</option>
+        <option value="en">🇬🇧 EN</option>
+      </select>
     </div>
     <button class="nav-toggle" aria-label="Abrir menú">☰</button>
     <nav class="nav-overlay">
+      <button class="nav-overlay-close" aria-label="Cerrar menú">✕</button>
       <ul class="nav-overlay-links">
         <li><a href="#quienes-somos">Quiénes Somos</a></li>
         <li><a href="#por-que">Por Qué</a></li>
