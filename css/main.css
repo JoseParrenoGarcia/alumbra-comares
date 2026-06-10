@@ -8,6 +8,7 @@
 @import './philosophy.css';
 @import './team.css';
 @import './services.css';
+@import './events.css';
 
 html {
   scroll-behavior: smooth;

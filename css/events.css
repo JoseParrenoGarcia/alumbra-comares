@@ -1,0 +1,139 @@
+#eventos {
+  background-color: var(--color-bg-wash);
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+#eventos h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+#events-intro {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--text-md);
+  margin-bottom: var(--space-16);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.events-grid {
+  display: grid;
+  gap: var(--space-8);
+  grid-template-columns: 1fr;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-8);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(160, 82, 45, 0.12);
+}
+
+.event-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.event-card__date {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.event-card__date--tbc {
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.event-card__location {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.event-card__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-4);
+  margin-top: 0;
+}
+
+.event-card__desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+  line-height: var(--leading-body);
+  flex-grow: 1;
+}
+
+.event-card__cta {
+  align-self: flex-start;
+}
+
+.events-empty {
+  text-align: center;
+  font-style: italic;
+  color: var(--color-text-muted);
+  padding: var(--space-12) 0;
+}
+
+/* Staggered reveal animation */
+.event-card.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-gentle), transform var(--transition-gentle);
+}
+
+.event-card.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .event-card.reveal,
+  .event-card.reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .event-card:hover {
+    transform: none;
+  }
+}
