@@ -6,6 +6,7 @@
 @import './hero.css';
 @import './footer.css';
 @import './philosophy.css';
+@import './team.css';
 
 html {
   scroll-behavior: smooth;
