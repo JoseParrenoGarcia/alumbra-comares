@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <nav>
+  <nav class="nav">
     <a href="#hero" class="nav-logo">Alumbra Comares</a>
     <ul class="nav-links">
       <li><a href="#quienes-somos">Quiénes Somos</a></li>
@@ -18,55 +18,68 @@
       <li><a href="#eventos">Eventos</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="Toggle navigation menu">Menu</button>
+    <div class="nav-lang">
+      <select class="lang-select" aria-label="Idioma">
+        <option value="es" selected>🇪🇸 ES</option>
+        <option value="en">🇬🇧 EN</option>
+      </select>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    <nav class="nav-overlay">
+      <button class="nav-overlay-close" aria-label="Cerrar menú">✕</button>
+      <ul class="nav-overlay-links">
+        <li><a href="#quienes-somos">Quiénes Somos</a></li>
+        <li><a href="#por-que">Por Qué</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
   </nav>
 
-  <section id="hero">
-    <div class="container">
-      <p class="reveal">Sección: Hero</p>
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="botanical-accent" aria-hidden="true"></div>
+      <h1 class="hero-headline reveal">Alumbra Comares</h1>
+      <p class="hero-subheadline reveal">Acompañamiento en embarazo, parto y maternidad desde la calma, el respeto y la evidencia científica</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary reveal" data-href="#contacto">Conoce nuestro acompañamiento</button>
+        <button class="btn btn-secondary reveal" data-href="#contacto">Contacta con nosotras</button>
+      </div>
     </div>
+    <div class="hero-image-placeholder"></div>
+    <div class="scroll-indicator" aria-hidden="true">↓</div>
   </section>
 
-  <section id="quienes-somos">
-    <div class="container">
-      <p class="reveal">Sección: Quiénes Somos</p>
-    </div>
-  </section>
+  <section id="quienes-somos"></section>
 
-  <section id="por-que">
-    <div class="container">
-      <p class="reveal">Sección: Por Qué</p>
-    </div>
-  </section>
+  <section id="por-que"></section>
 
-  <section id="equipo">
-    <div class="container">
-      <p class="reveal">Sección: Equipo</p>
-    </div>
-  </section>
+  <section id="equipo"></section>
 
-  <section id="servicios">
-    <div class="container">
-      <p class="reveal">Sección: Servicios</p>
-    </div>
-  </section>
+  <section id="servicios"></section>
 
-  <section id="eventos">
-    <div class="container">
-      <p class="reveal">Sección: Eventos</p>
-    </div>
-  </section>
+  <section id="eventos"></section>
 
-  <section id="contacto">
-    <div class="container">
-      <p class="reveal">Sección: Contacto</p>
-    </div>
-  </section>
+  <section id="contacto"></section>
 
-  <footer>
-    <p class="text-muted">__PLACEHOLDER__ Tagline de Alumbra Comares</p>
+  <footer class="footer">
+    <div class="footer-brand">
+      <h2>Alumbra Comares</h2>
+      <p class="footer-tagline">Acompañamiento integral en embarazo, parto y maternidad desde la calma, el respeto y la evidencia científica</p>
+    </div>
+    <div class="footer-links">
+      <a href="/privacidad.html" class="footer-link">Privacidad</a>
+      <a href="/cookies.html" class="footer-link">Cookies</a>
+      <a href="mailto:alumbracomares@outlook.com" class="footer-link">Email</a>
+      <a href="https://instagram.com/alumbracomares" class="footer-link">Instagram</a>
+    </div>
+    <p class="footer-copyright">© 2024 Alumbra Comares</p>
   </footer>
 
   <script src="js/reveal.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/content-loader.js" defer></script>
 </body>
 </html>
