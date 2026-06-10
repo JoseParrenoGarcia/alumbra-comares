@@ -9,6 +9,7 @@
 @import './team.css';
 @import './services.css';
 @import './events.css';
+@import './contact.css';
 
 html {
   scroll-behavior: smooth;
