@@ -1,0 +1,47 @@
+{
+  "heading": {
+    "es": "Eventos y Talleres",
+    "en": null,
+    "ca": null
+  },
+  "items": [
+    {
+      "title": {
+        "es": "Taller de Preparación a la Maternidad",
+        "en": null,
+        "ca": null
+      },
+      "date": "__PLACEHOLDER__",
+      "location": {
+        "es": "__PLACEHOLDER__",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Preparación integral para la maternidad y paternidad, con información basada en evidencia científica y acompañamiento emocional",
+        "en": null,
+        "ca": null
+      },
+      "placeholder": true
+    },
+    {
+      "title": {
+        "es": "Taller de Lactancia Materna",
+        "en": null,
+        "ca": null
+      },
+      "date": "__PLACEHOLDER__",
+      "location": {
+        "es": "__PLACEHOLDER__",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Información práctica y apoyo para la lactancia materna y artificial, con resolución de dudas y técnicas de agarre y posicionamiento",
+        "en": null,
+        "ca": null
+      },
+      "placeholder": true
+    }
+  ]
+}

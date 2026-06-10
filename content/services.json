@@ -1,0 +1,128 @@
+{
+  "heading": {
+    "es": "Nuestros Servicios",
+    "en": null,
+    "ca": null
+  },
+  "items": [
+    {
+      "title": {
+        "es": "Seguimiento del Embarazo",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Acompañamiento integral durante el embarazo con seguimiento personalizado basado en evidencia científica, información veraz y soporte emocional",
+        "en": null,
+        "ca": null
+      },
+      "price": {
+        "amount": "__PLACEHOLDER__",
+        "currency": "EUR",
+        "placeholder": true
+      }
+    },
+    {
+      "title": {
+        "es": "Atención al Parto",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Apoyo en parto hospitalario y parto domiciliario, incluyendo atención al parto en agua. Acompañamiento respetuoso, basado en el consenso y la confianza en los procesos naturales",
+        "en": null,
+        "ca": null
+      },
+      "price": {
+        "amount": "__PLACEHOLDER__",
+        "currency": "EUR",
+        "placeholder": true
+      }
+    },
+    {
+      "title": {
+        "es": "Seguimiento del Posparto",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Cuidado integral en el posparto con seguimiento personalizado, asesoramiento en lactancia, versión cefálica externa y resolución de dudas",
+        "en": null,
+        "ca": null
+      },
+      "price": {
+        "amount": "__PLACEHOLDER__",
+        "currency": "EUR",
+        "placeholder": true
+      }
+    },
+    {
+      "title": {
+        "es": "Visitas Privadas a Domicilio",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Asesoría en anquiloglosia, lactancia, destete y alimentación del recién nacido. Valoración y acompañamiento en dudas durante gestación, posparto y crianza",
+        "en": null,
+        "ca": null
+      },
+      "price": {
+        "amount": "__PLACEHOLDER__",
+        "currency": "EUR",
+        "placeholder": true
+      }
+    },
+    {
+      "title": {
+        "es": "Talleres de Preparación",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Talleres sobre preparación a la maternidad y paternidad, lactancia materna y artificial, en colaboración con otros profesionales dedicados al cuidado de la mujer",
+        "en": null,
+        "ca": null
+      },
+      "price": {
+        "amount": "__PLACEHOLDER__",
+        "currency": "EUR",
+        "placeholder": true
+      }
+    },
+    {
+      "title": {
+        "es": "Técnicas y Terapias Complementarias",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Formación y experiencia en hipnoparto, acupuntura, acupresión, rebozo y biomecánica fetal y materna. Acondicionamiento físico en el embarazo con Método AIPAP Agua y Terra",
+        "en": null,
+        "ca": null
+      },
+      "price": {
+        "amount": "__PLACEHOLDER__",
+        "currency": "EUR",
+        "placeholder": true
+      }
+    },
+    {
+      "title": {
+        "es": "Asesoramiento en Alimentación Complementaria",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Asesoría en Baby Led Weaning (BLW) y alimentación complementaria para acompañar el proceso de destete con respeto a los ritmos del bebé",
+        "en": null,
+        "ca": null
+      },
+      "price": {
+        "amount": "__PLACEHOLDER__",
+        "currency": "EUR",
+        "placeholder": true
+      }
+    }
+  ]
+}

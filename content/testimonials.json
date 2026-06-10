@@ -1,0 +1,37 @@
+{
+  "heading": {
+    "es": "Lo que dicen de nosotras",
+    "en": null,
+    "ca": null
+  },
+  "items": [
+    {
+      "quote": {
+        "es": "__PLACEHOLDER__: testimonio de una familia que ha sido acompañada por Alumbra Comares",
+        "en": null,
+        "ca": null
+      },
+      "name": "__PLACEHOLDER__",
+      "role": {
+        "es": "__PLACEHOLDER__",
+        "en": null,
+        "ca": null
+      },
+      "placeholder": true
+    },
+    {
+      "quote": {
+        "es": "__PLACEHOLDER__: otro testimonio sobre la experiencia de embarazo, parto o posparto",
+        "en": null,
+        "ca": null
+      },
+      "name": "__PLACEHOLDER__",
+      "role": {
+        "es": "__PLACEHOLDER__",
+        "en": null,
+        "ca": null
+      },
+      "placeholder": true
+    }
+  ]
+}

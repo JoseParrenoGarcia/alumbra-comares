@@ -52,12 +52,15 @@ Use this file as a pointer map, not as the main source of evolving project state
 - [`docs/style.md`](docs/style.md)
   Design system reference. Mandatory reading before any build milestone.
 
+- [`docs/playbook.md`](docs/playbook.md)
+  Agent operating manual. Mandatory reading before any build milestone. Covers file conventions, content rules, scope discipline, and definition of done.
+
 - `docs/`
   Home for evolving project documentation such as implementation plans, content inventories, style notes, and decision logs.
 
 ## Build and Design Constraints
 
-Before working on any HTML, CSS, or JavaScript milestone, read [`docs/style.md`](docs/style.md). It is the sole design source of truth.
+Before working on any HTML, CSS, or JavaScript milestone, read [`docs/playbook.md`](docs/playbook.md) and [`docs/style.md`](docs/style.md) in that order. The playbook is the operating manual; the style guide is the design source of truth.
 
 Non-obvious constraints to carry into every build session:
 
