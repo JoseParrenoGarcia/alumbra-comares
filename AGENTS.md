@@ -46,8 +46,25 @@ Use this file as a pointer map, not as the main source of evolving project state
 - [`assets/reference-docs/reference-content-in-text.md`](/Users/joseparreno/Documents/GitHub/alumbra-comares/assets/reference-docs/reference-content-in-text.md)
   Working text extraction and translation from the JPG references. Use this as the first text source before re-reading image assets.
 
+- [`docs/plan.md`](docs/plan.md)
+  Milestone index. Start here to understand the full delivery arc and find the relevant milestone file.
+
+- [`docs/style.md`](docs/style.md)
+  Design system reference. Mandatory reading before any build milestone.
+
 - `docs/`
   Home for evolving project documentation such as implementation plans, content inventories, style notes, and decision logs.
+
+## Build and Design Constraints
+
+Before working on any HTML, CSS, or JavaScript milestone, read [`docs/style.md`](docs/style.md). It is the sole design source of truth.
+
+Non-obvious constraints to carry into every build session:
+
+- **No hardcoded copy in HTML.** All text content lives in JSON files under `content/`. HTML templates reference those files.
+- **Placeholders are valid and expected.** Mark them clearly (`__PLACEHOLDER__` prefix or `placeholder: true` flag). Never invent content to fill a gap.
+- **Spanish at launch.** Content fields must be structured for future English and Valenciano/Catalan, but only Spanish is required to be populated now.
+- **Follow the milestone files.** Each `docs/mN.md` defines scope, tasks, and definition of done for its PR. Do not expand scope beyond what a milestone specifies.
 
 ## Document Ownership
 
