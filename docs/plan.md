@@ -9,9 +9,9 @@
 | [M3](m3.md) | HTML/CSS scaffold — structure and design system | complete | Base HTML, CSS tokens, fonts, layout shell |
 | [M4](m4.md) | Hero, nav, and footer | complete | Top and bottom of page |
 | [M5](m5.md) | Philosophy, Why Alumbra, and pillars sections | complete | Brand story sections |
-| [M6](m6.md) | Meet the midwives section | pending | Three profile cards |
-| [M7](m7.md) | Services section | pending | Service cards with placeholders |
-| [M8](m8.md) | Events section | pending | Event cards with placeholder data |
+| [M6](m6.md) | Meet the midwives section | complete | Three profile cards |
+| [M7](m7.md) | Services section | complete | Service cards with placeholders |
+| [M8](m8.md) | Events section | complete | Event cards with placeholder data |
 | [M9](m9.md) | Contact section and form | pending | Form + contact channels, Formspree |
 | [M10](m10.md) | Testimonials and brochure placeholders | pending | Placeholder blocks |
 | [M11](m11.md) | Privacy and cookie pages | pending | Lightweight draft legal pages |

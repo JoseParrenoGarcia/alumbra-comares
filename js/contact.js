@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     error.hidden = true;
 
     try {
-      const res = await fetch('https://formspree.io/f/XXXXXX', {
+      const res = await fetch('https://formspree.io/f/xrevlrgg', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: new FormData(form)
