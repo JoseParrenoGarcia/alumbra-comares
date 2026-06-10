@@ -32,9 +32,30 @@ async function populateTeam() {
   document.getElementById('quote-band-text').textContent = data.members[1].quote.es;
 }
 
+async function populateServices() {
+  const data = await loadJSON('content/services.json');
+
+  document.getElementById('services-heading').textContent = data.heading.es;
+
+  data.items.forEach((item, i) => {
+    document.getElementById(`service-${i}-title`).textContent = item.title.es;
+    document.getElementById(`service-${i}-desc`).textContent = item.description.es;
+
+    const priceEl = document.getElementById(`service-${i}-price`);
+    if (item.price.placeholder) {
+      priceEl.textContent = 'Precio a consultar';
+      priceEl.classList.add('price--placeholder');
+    } else {
+      priceEl.textContent = `${item.price.amount} ${item.price.currency}`;
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   await loadSection('quienes-somos', 'sections/quienes-somos.html');
   await loadSection('por-que', 'sections/por-que.html');
   await loadSection('equipo', 'sections/equipo.html');
   await populateTeam();
+  await loadSection('servicios', 'sections/servicios.html');
+  await populateServices();
 });
