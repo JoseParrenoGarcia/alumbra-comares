@@ -1,0 +1,217 @@
+/* Quiénes Somos Section */
+#quienes-somos h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.section-body {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: var(--leading-body);
+  max-width: 800px;
+  margin: 0 auto var(--space-16);
+  text-align: center;
+}
+
+/* Pillars Grid */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+
+.pillar-card {
+  background: var(--color-bg-wash);
+  padding: var(--space-8);
+  border-radius: 4px;
+  transition: all var(--transition-base);
+}
+
+.pillar-card:hover {
+  box-shadow: 0 4px 16px rgba(160, 82, 45, 0.08);
+  transform: translateY(-3px);
+}
+
+.pillar-icon {
+  color: var(--color-sage);
+  font-size: var(--text-xl);
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.pillar-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-terracotta);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.pillar-card p {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+/* Por Qué Section */
+#por-que h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-12);
+  text-align: center;
+}
+
+/* Definition Grid */
+.definition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+}
+
+.definition-card {
+  padding: var(--space-6);
+  border-left: 3px solid var(--color-terracotta-pale);
+}
+
+.definition-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-terracotta);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.definition-card p {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+/* Brand Rationale */
+.brand-rationale {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: var(--leading-body);
+  max-width: 800px;
+  margin: 0 auto var(--space-12);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Values List */
+.values-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.values-list li {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-body);
+  padding-left: var(--space-6);
+  border-left: 2px solid var(--color-botanical);
+  margin-bottom: var(--space-4);
+}
+
+.values-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Quote Band */
+.quote-band {
+  background: var(--color-blush);
+  padding: var(--space-16) var(--section-padding-x);
+  text-align: center;
+}
+
+.quote-band::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--color-terracotta-pale);
+  margin: 0 0 var(--space-6) 0;
+}
+
+.quote-band::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--color-terracotta-pale);
+  margin: var(--space-6) 0 0 0;
+}
+
+.quote-band__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote-band__mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-ochre);
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.text-quote {
+  font-family: 'Dancing Script', cursive;
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: var(--leading-body);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .definition-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #quienes-somos h2,
+  #por-que h2 {
+    font-size: var(--text-3xl);
+  }
+
+  .text-quote {
+    font-size: var(--text-xl);
+  }
+
+  .quote-band__mark {
+    font-size: 2.5rem;
+  }
+}
