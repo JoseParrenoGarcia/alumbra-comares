@@ -43,6 +43,9 @@ Use this file as a pointer map, not as the main source of evolving project state
 - [`assets/reference-docs`](/Users/joseparreno/Documents/GitHub/alumbra-comares/assets/reference-docs)
   Source images for early content extraction, copy inspiration, and visual direction.
 
+- [`assets/reference-docs/reference-content-in-text.md`](/Users/joseparreno/Documents/GitHub/alumbra-comares/assets/reference-docs/reference-content-in-text.md)
+  Working text extraction and translation from the JPG references. Use this as the first text source before re-reading image assets.
+
 - `docs/`
   Home for evolving project documentation such as implementation plans, content inventories, style notes, and decision logs.
 

@@ -114,11 +114,19 @@ The visual system should later be documented more explicitly, including:
 
 Current source material lives in [`assets/reference-docs`](/Users/joseparreno/Documents/GitHub/alumbra-comares/assets/reference-docs).
 
+The current extracted text reference lives in [`assets/reference-docs/reference-content-in-text.md`](/Users/joseparreno/Documents/GitHub/alumbra-comares/assets/reference-docs/reference-content-in-text.md).
+
 These image files should be treated as:
 
 - inspiration
 - partial content source
 - early visual references
+
+The extracted Markdown reference should be treated as:
+
+- the primary working transcript of the JPG materials
+- a convenient source for early copy modeling and content structuring
+- a derived artifact that may still need stakeholder confirmation against the original images
 
 They are not final approved source of truth.
 
