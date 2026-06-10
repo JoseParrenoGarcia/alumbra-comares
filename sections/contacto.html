@@ -1,0 +1,46 @@
+<section id="contacto" class="section">
+  <div class="contact-inner container">
+    <div class="contact-channels">
+      <h2 id="contact-heading"></h2>
+      <p id="contact-subheading"></p>
+      <ul class="contact-channel-list" id="contact-channel-list"></ul>
+    </div>
+    <div class="contact-form-wrap">
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-field">
+          <label for="contact-name" id="label-name"></label>
+          <input type="text" id="contact-name" name="name" required autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="contact-email" id="label-email"></label>
+          <input type="email" id="contact-email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="contact-phone">Teléfono / WhatsApp</label>
+          <input type="tel" id="contact-phone" name="phone" autocomplete="tel">
+        </div>
+        <div class="form-field">
+          <label for="contact-service">Servicio de interés</label>
+          <select id="contact-service" name="service">
+            <option value="">— Selecciona un servicio —</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="contact-lang">Idioma preferido</label>
+          <select id="contact-lang" name="language">
+            <option value="es" selected>Español</option>
+            <option value="en">English</option>
+            <option value="ca">Valenciano / Català</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="contact-message" id="label-message"></label>
+          <textarea id="contact-message" name="message" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="contact-submit"></button>
+        <p class="form-success" id="form-success" hidden>¡Gracias! Te responderemos pronto.</p>
+        <p class="form-error" id="form-error" hidden>Algo salió mal. Inténtalo de nuevo o escríbenos directamente.</p>
+      </form>
+    </div>
+  </div>
+</section>
