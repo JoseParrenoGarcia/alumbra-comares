@@ -1,9 +1,11 @@
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(el => {
     if (el.isIntersecting) el.target.classList.add('visible');
   });
 }, { threshold: 0.15 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-});
+function observeRevealElements() {
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}
+
+document.addEventListener('DOMContentLoaded', observeRevealElements);
