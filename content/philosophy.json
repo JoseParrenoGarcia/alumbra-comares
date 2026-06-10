@@ -1,0 +1,53 @@
+{
+  "heading": {
+    "es": "Nuestra Filosofía",
+    "en": null,
+    "ca": null
+  },
+  "body": {
+    "es": "Alumbra Comares surge de la inquietud de tres matronas de querer acompañar a las mujeres desde la calma, sin prisas, desde el respeto y proporcionando siempre información veraz y que esté actualizada. La mujer es el centro. La matrona acompaña, no lidera el proceso. Creemos en la sabiduría del cuerpo y en el poder de la información basada en evidencia científica.",
+    "en": null,
+    "ca": null
+  },
+  "pillars": [
+    {
+      "icon": "__PLACEHOLDER__: icono-cuidado",
+      "title": {
+        "es": "Cuidado y Bienestar",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Nuestra prioridad es el cuidado y el bienestar de la mujer, su bebé y la familia",
+        "en": null,
+        "ca": null
+      }
+    },
+    {
+      "icon": "__PLACEHOLDER__: icono-respeto",
+      "title": {
+        "es": "Respeto al Proceso",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Respeto máximo al proceso de gestar y parir, convertirse en madre",
+        "en": null,
+        "ca": null
+      }
+    },
+    {
+      "icon": "__PLACEHOLDER__: icono-formacion",
+      "title": {
+        "es": "Continua Formación",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Nos gusta estar en continua formación, buscamos siempre formarnos con profesionales de referencia con los que nos resuene su forma de hacer las cosas",
+        "en": null,
+        "ca": null
+      }
+    }
+  ]
+}

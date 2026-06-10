@@ -1,0 +1,42 @@
+{
+  "tagline": {
+    "es": "Acompañamiento integral en embarazo, parto y maternidad desde la calma, el respeto y la evidencia científica",
+    "en": null,
+    "ca": null
+  },
+  "links": [
+    {
+      "label": {
+        "es": "Privacidad",
+        "en": null,
+        "ca": null
+      },
+      "href": "/privacidad.html"
+    },
+    {
+      "label": {
+        "es": "Cookies",
+        "en": null,
+        "ca": null
+      },
+      "href": "/cookies.html"
+    },
+    {
+      "label": {
+        "es": "Email",
+        "en": null,
+        "ca": null
+      },
+      "href": "mailto:alumbracomares@outlook.com"
+    },
+    {
+      "label": {
+        "es": "Instagram",
+        "en": null,
+        "ca": null
+      },
+      "href": "https://instagram.com/alumbracomares"
+    }
+  ],
+  "copyright": "© 2024 Alumbra Comares"
+}

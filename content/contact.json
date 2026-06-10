@@ -1,0 +1,64 @@
+{
+  "heading": {
+    "es": "Contacta con Nosotras",
+    "en": null,
+    "ca": null
+  },
+  "subheading": {
+    "es": "¿Tienes dudas? Ponte en contacto con nosotras. Te responderemos con la mayor brevedad posible",
+    "en": null,
+    "ca": null
+  },
+  "form": {
+    "name_label": {
+      "es": "Nombre",
+      "en": null,
+      "ca": null
+    },
+    "email_label": {
+      "es": "Correo Electrónico",
+      "en": null,
+      "ca": null
+    },
+    "message_label": {
+      "es": "Mensaje",
+      "en": null,
+      "ca": null
+    },
+    "submit_label": {
+      "es": "Enviar",
+      "en": null,
+      "ca": null
+    },
+    "endpoint": "__PLACEHOLDER__: formspree endpoint or backend URL"
+  },
+  "channels": [
+    {
+      "type": "email",
+      "label": {
+        "es": "Email",
+        "en": null,
+        "ca": null
+      },
+      "value": "alumbracomares@outlook.com"
+    },
+    {
+      "type": "phone",
+      "label": {
+        "es": "Teléfono",
+        "en": null,
+        "ca": null
+      },
+      "value": "+34 656479893"
+    },
+    {
+      "type": "instagram",
+      "label": {
+        "es": "Instagram",
+        "en": null,
+        "ca": null
+      },
+      "value": "@alumbracomares"
+    }
+  ]
+}

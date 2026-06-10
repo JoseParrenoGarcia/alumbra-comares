@@ -1,0 +1,66 @@
+{
+  "heading": {
+    "es": "Conoce al Equipo",
+    "en": null,
+    "ca": null
+  },
+  "members": [
+    {
+      "name": "Isabel",
+      "role": {
+        "es": "Matrona, Enfermera y Divulgadora",
+        "en": null,
+        "ca": null
+      },
+      "bio": {
+        "es": "Me llamo Isabel. Soy matrona y enfermera, divulgadora y me apasiona mi trabajo. Mi principal objetivo es que las mujeres puedan tener acceso a información veraz y objetiva basada en evidencia científica y que así puedan ser libres para tomar decisiones en cuanto respecta a su maternidad siendo ellas y sus criaturas eje principal.\n\nEl embarazo, parto y posparto son etapas intensas que nos llenan de emociones pero también de dudas e incluso miedos. Quiero que sepas que la persona que más sabe de tu embarazo, tu parto y tu bebé eres tú. La matrona o el ginecólogo están para acompañarte en el proceso y darte información y soporte cuando lo necesites.\n\nGestar y parir son procesos instintivos. Confía en la sabiduría de tu cuerpo.",
+        "en": null,
+        "ca": null
+      },
+      "quote": {
+        "es": "El ambiente propicio para dar a luz es exactamente el mismo ambiente en el que uno hace el amor",
+        "en": null,
+        "ca": null
+      },
+      "image": "__PLACEHOLDER__: foto-isabel.jpg"
+    },
+    {
+      "name": "Alicia",
+      "role": {
+        "es": "Matrona, Enfermera y Madre",
+        "en": null,
+        "ca": null
+      },
+      "bio": {
+        "es": "Me llamo Alicia, soy matrona, enfermera y madre. Entiendo la maternidad y el cuidado desde el respeto absoluto por los ritmos del cuerpo. Para mí, ser matrona no significa liderar el proceso, sino sostenerlo y acompañarlo. Creo firmemente que la mujer es el centro, y el papel de la matrona es ofrecer información basada en la evidencia científica para que pueda tomar sus propias decisiones.\n\nMi compromiso es preservar la sabiduría innata de tu cuerpo, estar a tu lado para que te sientas segura, escuchada y acompañada, interviniendo solo cuando es estrictamente necesario y siempre desde el consenso y el respeto. Recuerda que el poder siempre ha sido tuyo.",
+        "en": null,
+        "ca": null
+      },
+      "quote": {
+        "es": "Dar a luz es la transformación más profunda que una mujer experimentará jamás, es el nacimiento de una madre",
+        "en": null,
+        "ca": null
+      },
+      "image": "__PLACEHOLDER__: foto-alicia.jpg"
+    },
+    {
+      "name": "Leticia",
+      "role": {
+        "es": "Matrona, Enfermera y Madre de Dos",
+        "en": null,
+        "ca": null
+      },
+      "bio": {
+        "es": "Me llamo Leti, soy matrona, enfermera y madre de dos. Para mí, ser matrona es mi forma de ser y de estar en el mundo. Poder compartir momentos tan íntimos como el embarazo, el parto y la maternidad con las mujeres es un privilegio. Convertirse en madre y formar una familia es un momento único en la vida, que merece ser respetado, protegido y acompañado desde la empatía y la comprensión.\n\nMi objetivo como matrona es acompañarte y darte sostén en los momentos que necesites, pero sabiendo que la protagonista de la historia sois tú y tu bebé.",
+        "en": null,
+        "ca": null
+      },
+      "quote": {
+        "es": "La maternidad es todo el rato, no podemos atravesarla consultando apuntes y libros",
+        "en": null,
+        "ca": null
+      },
+      "image": "__PLACEHOLDER__: foto-leticia.jpg"
+    }
+  ]
+}
