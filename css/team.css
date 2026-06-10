@@ -1,0 +1,149 @@
+/* Equipo Section */
+#equipo h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-16);
+  text-align: center;
+}
+
+/* Profile Cards Container */
+.profile-cards-container {
+  margin-bottom: var(--space-24);
+}
+
+/* Profile Card Base */
+.profile-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-12);
+  padding: var(--space-12) 0;
+  border-bottom: 1px solid var(--color-border);
+  align-items: start;
+}
+
+.profile-card:last-of-type {
+  border-bottom: none;
+}
+
+/* Profile Card Right (Alicia - reversed order) */
+.profile-card--right {
+  grid-template-columns: 1fr auto;
+}
+
+/* Profile Card Image */
+.profile-card__image {
+  width: 280px;
+  height: 340px;
+  border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+  background: var(--color-bg-wash);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-3xl);
+  color: var(--color-terracotta);
+  flex-shrink: 0;
+}
+
+/* Profile Card Content */
+.profile-card__content {
+  padding-top: var(--space-4);
+}
+
+/* Profile Card Name */
+.profile-card__name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-terracotta);
+  margin: 0 0 var(--space-2) 0;
+}
+
+/* Profile Card Role */
+.profile-card__role {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 300;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin: 0 0 var(--space-6) 0;
+}
+
+/* Profile Card Bio */
+.profile-card__bio {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-md);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: var(--leading-body);
+  margin: 0 0 var(--space-6) 0;
+}
+
+/* Profile Card Quote */
+.profile-card__quote {
+  font-family: 'Dancing Script', cursive;
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--color-terracotta-mid);
+  border-left: 3px solid var(--color-terracotta-pale);
+  padding-left: var(--space-6);
+  margin: 0;
+  font-style: normal;
+  line-height: var(--leading-body);
+}
+
+/* Staggered Reveal Animation */
+.profile-card {
+  transition-delay: 0ms;
+}
+
+.profile-card:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.profile-card:nth-child(3) {
+  transition-delay: 200ms;
+}
+
+/* Responsive: Tablet and Desktop */
+@media (min-width: 768px) {
+  .profile-card {
+    grid-template-columns: auto 1fr;
+    gap: var(--space-12);
+  }
+
+  .profile-card--right {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 767px) {
+  .profile-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    padding: var(--space-8) 0;
+    align-items: center;
+  }
+
+  .profile-card--right {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card__image {
+    width: 200px;
+    height: 240px;
+    margin: 0 auto;
+  }
+
+  .profile-card__content {
+    text-align: center;
+  }
+
+  #equipo h2 {
+    font-size: var(--text-3xl);
+  }
+}
