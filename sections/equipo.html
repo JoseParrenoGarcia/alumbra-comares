@@ -53,33 +53,3 @@
   </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', async () => {
-  try {
-    const res = await fetch('content/team.json');
-    const data = await res.json();
-
-    // Section heading
-    document.getElementById('team-heading').textContent = data.heading.es;
-
-    // Populate each member
-    const members = ['Isabel', 'Alicia', 'Leticia'];
-    members.forEach((memberName, index) => {
-      const member = data.members[index];
-      const prefix = memberName.toLowerCase();
-
-      document.getElementById(`${prefix}-initial`).textContent = member.name.charAt(0);
-      document.getElementById(`${prefix}-name`).textContent = member.name;
-      document.getElementById(`${prefix}-role`).textContent = member.role.es;
-      document.getElementById(`${prefix}-bio`).textContent = member.bio.es;
-      document.getElementById(`${prefix}-quote`).textContent = member.quote.es;
-    });
-
-    // Quote band: use Alicia's quote
-    document.getElementById('quote-band-text').textContent = data.members[1].quote.es;
-
-  } catch (error) {
-    console.error('Failed to load team data:', error);
-  }
-});
-</script>
