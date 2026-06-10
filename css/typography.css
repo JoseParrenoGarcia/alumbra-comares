@@ -1,0 +1,53 @@
+html {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: var(--color-text-primary);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  line-height: var(--leading-tight);
+  color: var(--color-terracotta);
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+
+p {
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+  color: var(--color-text-primary);
+}
+
+.text-quote {
+  font-family: 'Dancing Script', cursive;
+  font-size: var(--text-xl);
+  color: var(--color-terracotta-mid);
+}
+
+.label {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: var(--text-5xl);
+  }
+}
