@@ -51,11 +51,19 @@ async function populateServices() {
   });
 }
 
+function revealSection(id) {
+  document.querySelectorAll(`#${id} .reveal`).forEach(el => el.classList.add('visible'));
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   await loadSection('quienes-somos', 'sections/quienes-somos.html');
+  revealSection('quienes-somos');
   await loadSection('por-que', 'sections/por-que.html');
+  revealSection('por-que');
   await loadSection('equipo', 'sections/equipo.html');
   await populateTeam();
+  revealSection('equipo');
   await loadSection('servicios', 'sections/servicios.html');
   await populateServices();
+  revealSection('servicios');
 });
