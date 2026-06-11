@@ -82,6 +82,31 @@ async function populateEvents() {
   });
 }
 
+async function populateTestimonials() {
+  const data = await loadJSON('content/testimonials.json');
+
+  document.getElementById('testimonials-heading').textContent = data.heading.es;
+
+  const grid = document.getElementById('testimonials-grid');
+  data.items.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'testimonial-card reveal';
+    card.style.transitionDelay = `${i * 80}ms`;
+
+    const isPlaceholder = item.placeholder === true;
+    const quoteClass = isPlaceholder ? 'testimonial-quote placeholder' : 'testimonial-quote';
+    const nameClass = isPlaceholder ? 'testimonial-name placeholder' : 'testimonial-name';
+    const roleClass = isPlaceholder ? 'testimonial-role placeholder' : 'testimonial-role';
+
+    card.innerHTML = `
+      <p class="${quoteClass}">${item.quote.es}</p>
+      <p class="${nameClass}">${item.name}</p>
+      <p class="${roleClass}">${item.role.es}</p>
+    `;
+    grid.appendChild(card);
+  });
+}
+
 async function populateContact() {
   const [contactData, servicesData] = await Promise.all([
     loadJSON('content/contact.json'),
@@ -155,6 +180,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadSection('eventos', 'sections/eventos.html');
   await populateEvents();
   revealSection('eventos');
+  await loadSection('testimonios', 'sections/testimonios.html');
+  await populateTestimonials();
+  revealSection('testimonios');
+  await loadSection('recursos', 'sections/recursos.html');
+  revealSection('recursos');
   await loadSection('contacto', 'sections/contacto.html');
   await populateContact();
   revealSection('contacto');
