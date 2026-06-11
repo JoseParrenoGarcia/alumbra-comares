@@ -137,16 +137,6 @@ async function populateContact() {
     list.appendChild(li);
   });
 
-  // WhatsApp
-  const waLi = document.createElement('li');
-  waLi.className = 'contact-channel';
-  waLi.innerHTML = `<a href="https://wa.me/34656479893" class="contact-channel__link" target="_blank" rel="noopener">
-    <span class="contact-channel__icon" aria-hidden="true">💬</span>
-    <span class="contact-channel__label">WhatsApp</span>
-    <span class="contact-channel__value">+34 656 479 893</span>
-  </a>`;
-  list.appendChild(waLi);
-
   // Service interest options
   const select = document.getElementById('contact-service');
   servicesData.items.forEach(item => {
