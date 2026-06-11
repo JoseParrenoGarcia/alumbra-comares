@@ -8,10 +8,12 @@ description: >
   selection (~800 chars, trigger keywords, edge cases, exclusions), SKILL.md body
   structure (under 500 lines), when to use references/ vs. body, anti-patterns
   (bloated description, invisible edge cases, no testing), skill vs. subagent
-  distinction, optional directories (scripts/, references/, assets/). Produces a
-  YAML-frontmattered SKILL.md with workflow sections and examples. NOT for: creating
-  agents, hooks, rules, or memory files — those have dedicated authoring skills.
-version: 1.0.0
+  distinction, optional directories (scripts/, references/, assets/), frontmatter
+  parameters (allowed-tools, model, effort, context, argument-hint, paths,
+  disable-model-invocation, user-invocable, hooks, shell), and runtime argument
+  variables ($ARGUMENTS, $ARGUMENTS[N], $0/$1, $CLAUDE_SESSION_ID, $CLAUDE_SKILL_DIR).
+  NOT for: creating agents, hooks, rules, or memory files — those have dedicated
+  authoring skills.
 ---
 
 # Create Skill
@@ -22,13 +24,28 @@ When asked to create a skill for this project, apply the following design rules 
 
 ```markdown
 ---
-name: skill-name          # must exactly match the parent directory name
-description: [~800 chars] What it does + when to use it + keywords + edge cases + NOT for
-license: MIT              # optional
-compatibility: Requires Python 3.11+ and uv   # optional — only if env requirements exist
-metadata:                 # optional
+name: skill-name              # must exactly match the parent directory name
+description: [~800 chars]     # what it does + when to use + keywords + NOT for
+license: MIT                  # optional
+compatibility: Requires Python 3.11+ and uv   # optional — env requirements only
+metadata:                     # optional
   author: your-name
   version: "1.0"
+
+# Execution control (all optional)
+argument-hint: "[milestone-id]"     # hint shown in autocomplete
+disable-model-invocation: false     # true = manual /name trigger only
+user-invocable: true                # false = hidden from / menu
+allowed-tools: Bash Read Write Edit # tools auto-approved when skill is active
+model: claude-haiku-4-5-20251001    # override session model for this skill
+effort: high                        # low | medium | high | max (Opus 4.6+ only)
+context: fork                       # fork = run in isolated subagent context
+agent: Explore                      # subagent type when context: fork is set
+paths: "content/**,index.html"      # glob: only activate when these files are open
+shell: bash                         # bash (default) or powershell
+hooks:                              # lifecycle hooks scoped to this skill
+  post-tool-use:
+    - command: echo "done"
 ---
 
 # Skill Title
@@ -48,6 +65,44 @@ See references/ for detailed specs and examples.
 - `assets/` — templates, schemas
 
 **Keep SKILL.md under 500 lines total.**
+
+## Frontmatter Parameters
+
+Only add parameters that change the skill's behaviour — don't copy the full list as boilerplate.
+
+| Parameter | When to use |
+|-----------|-------------|
+| `argument-hint` | Skill accepts a user-supplied argument (e.g. milestone ID, filename). Shown in autocomplete as `[label]`. |
+| `disable-model-invocation: true` | Skill should only run when explicitly invoked with `/name`, never auto-triggered by the model. |
+| `user-invocable: false` | Internal/background skill. Hide from the `/` menu. |
+| `allowed-tools` | Pre-approve specific tools so the skill runs without per-call permission prompts. List only what the skill actually needs. |
+| `model` | Skill needs a specific model tier — e.g. `claude-haiku-4-5-20251001` for fast cheap tasks, Opus for deep reasoning. Also pin when the skill produces output that will be **compared across runs** (audits, scorecards, reports) — model drift between runs produces score noise that looks like site changes. Omit to inherit the session model. |
+| `effort` | Skill needs more or less compute than the session default. Options: `low`, `medium`, `high`, `max` (Opus 4.6+ only). Pin alongside `model` for audit/scoring skills to keep qualitative judgements stable. |
+| `context: fork` | Skill should run in an isolated subagent so it does not pollute the main context window. Combine with `agent:` to pick the subagent type. |
+| `paths` | Skill is only relevant when certain files are open (e.g. `content/**` for a content-audit skill). Avoids spurious auto-activation. |
+| `hooks` | Skill needs lifecycle side-effects (e.g. run a validator after every tool use). Keep hooks minimal. |
+
+## Runtime Arguments
+
+When a skill accepts user input via `/skill-name arg`, use these variables in the skill body:
+
+| Variable | Value |
+|----------|-------|
+| `$ARGUMENTS` | Full argument string as typed |
+| `$ARGUMENTS[0]`, `$0` | First argument |
+| `$ARGUMENTS[1]`, `$1` | Second argument |
+| `${CLAUDE_SESSION_ID}` | Current session ID — useful for scoping output files |
+| `${CLAUDE_SKILL_DIR}` | Directory containing this SKILL.md — use to reference bundled scripts or assets regardless of working directory |
+
+Example — skill that accepts a milestone ID:
+
+```markdown
+---
+name: spawn-milestone
+argument-hint: "[milestone-id]"
+---
+Read the milestone file at docs/milestones/$0.md and execute it.
+```
 
 ## DOs
 
