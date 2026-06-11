@@ -52,6 +52,10 @@ Ordering logic:
 
 Audit milestones are intentionally not Haiku-led by default. Where external research is needed, the milestone file includes a human-run prompt so results from ChatGPT, Claude, Grok, or another provider can be pasted back into the repo workflow.
 
+### More ideas
+1. Mobile first needs review of section sizes - right now really big sections
+2. Mobile first would benefit from carousels: example, for testimonials or events
+
 ## Design Reference
 
 All build milestones (M3–M12) must follow [`docs/style.md`](style.md).
