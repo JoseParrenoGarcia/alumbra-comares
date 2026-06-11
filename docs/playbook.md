@@ -9,7 +9,7 @@ This file tells you how to operate in this repository. Read it before starting a
 Read these three files in order:
 
 1. [`docs/style.md`](style.md) — design system. Every colour, font, spacing decision, and component pattern is here. Do not improvise.
-2. Your assigned milestone file (e.g. `docs/m4.md`) — scope, tasks, definition of done, open questions.
+2. Your assigned milestone file (e.g. `docs/milestones/m4.md`) — scope, tasks, definition of done, open questions.
 3. [`assets/reference-docs/reference-content-in-text.md`](../assets/reference-docs/reference-content-in-text.md) — source content. Use this before inventing any copy.
 
 If you are unsure whether something is in scope, it is not in scope.

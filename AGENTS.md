@@ -55,6 +55,9 @@ Use this file as a pointer map, not as the main source of evolving project state
 - [`docs/playbook.md`](docs/playbook.md)
   Agent operating manual. Mandatory reading before any build milestone. Covers file conventions, content rules, scope discipline, and definition of done.
 
+- [`docs/research/`](docs/research/)
+  Home for completed audits and benchmark material. Use these documents as durable reference inputs for later milestones, then push any resulting product decisions into the PRD or the relevant milestone docs.
+
 - `docs/`
   Home for evolving project documentation such as implementation plans, content inventories, style notes, and decision logs.
 

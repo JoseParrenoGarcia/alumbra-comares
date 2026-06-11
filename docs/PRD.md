@@ -116,6 +116,8 @@ Current source material lives in [`assets/reference-docs`](/Users/joseparreno/Do
 
 The current extracted text reference lives in [`assets/reference-docs/reference-content-in-text.md`](/Users/joseparreno/Documents/GitHub/alumbra-comares/assets/reference-docs/reference-content-in-text.md).
 
+Completed benchmark and audit documents live in [`docs/research/`](/Users/joseparreno/Documents/GitHub/alumbra-comares/docs/research). These should be treated as durable reference inputs for future roadmap decisions, especially around information architecture, trust signals, service clarity, and contact patterns.
+
 These image files should be treated as:
 
 - inspiration
@@ -158,6 +160,7 @@ They are not final approved source of truth.
 - FAQ
 - step-by-step “how to begin”
 - trust signals such as credentials or affiliations
+- how we work / safety boundaries
 - downloadable PDFs
 - richer resource library
 
@@ -176,7 +179,7 @@ Reasoning:
 
 ### Alternative To Revisit Later
 
-A small multi-page static site if content volume grows or if services/events need deeper separation.
+A small multi-page static site if content volume grows or if services, safety guidance, FAQs, or resources need deeper separation.
 
 ## 11. Functional Requirements
 
@@ -224,6 +227,7 @@ The site must support:
 - short descriptions
 - pricing placeholders
 - future expansion for confirmed prices
+- package logic or “from” pricing if the founders decide to publish more pricing clarity later
 
 ### FR7. Contact Form
 
@@ -232,6 +236,8 @@ The contact form should initially capture:
 - name
 - email
 - phone or WhatsApp
+- pregnancy stage, weeks pregnant, or baby age when relevant
+- area / location
 - service interest
 - preferred language
 
@@ -245,6 +251,8 @@ The site must visibly support:
 - phone
 - WhatsApp
 - Instagram
+
+WhatsApp may become the primary low-friction contact route if the founders choose to operationalize it after post-v0 review.
 
 ### FR9. Form Backend
 
