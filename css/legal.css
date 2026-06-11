@@ -1,0 +1,115 @@
+/* legal.css — shared styles for privacidad.html and cookies.html */
+
+.legal-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-16) var(--section-padding-x) var(--space-24);
+}
+
+/* Draft banner */
+.legal-draft-banner {
+  border-left: 4px solid var(--color-terracotta);
+  background-color: var(--color-bg-wash);
+  color: var(--color-text-secondary);
+  padding: var(--space-4) var(--space-6);
+  margin-bottom: var(--space-12);
+  border-radius: 0 4px 4px 0;
+}
+
+.legal-draft-banner strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-1);
+}
+
+.legal-draft-banner p {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: var(--leading-body);
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+/* Page heading */
+.legal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-terracotta);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-3);
+}
+
+.legal-updated {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-6);
+}
+
+/* Sections */
+.legal-section {
+  margin-bottom: var(--space-12);
+}
+
+.legal-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-2);
+}
+
+.legal-section p,
+.legal-section li {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--leading-body);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.legal-section ul {
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.legal-section li {
+  margin-bottom: var(--space-2);
+}
+
+.legal-section a {
+  color: var(--color-terracotta-mid);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-section a:hover,
+.legal-section a:focus {
+  color: var(--color-terracotta);
+}
+
+.legal-section a:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .legal-title {
+    font-size: var(--text-2xl);
+  }
+
+  .legal-section h2 {
+    font-size: var(--text-lg);
+  }
+}
