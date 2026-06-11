@@ -16,31 +16,41 @@
 | [M10](m10.md) | Testimonials and brochure placeholders | complete | Placeholder blocks |
 | [M11](m11.md) | Privacy and cookie pages | complete | Lightweight draft legal pages |
 | [M12](m12.md) | GitHub Pages deployment | pending | Deploy config, final checks |
+| [M13](m13.md) | External website benchmark audit | planned | Research pack + benchmark synthesis |
+| [M14](m14.md) | Persona audit framework | planned | Reusable personas + audit rubric |
+| [M15](m15.md) | Services content review and rewrite | planned | Clearer service explanations in content JSON |
+| [M16](m16.md) | WhatsApp / Telegram feasibility review | planned | Contact-channel recommendation and implementation brief |
+| [M17](m17.md) | Information architecture audit | planned | Single-page vs multi-page recommendation |
+| [M18](m18.md) | Education and credentials section | planned | Trust-building content block or page |
+| [M19](m19.md) | Resources library / blog | planned | Recommended materials section or page |
+| [M20](m20.md) | SEO foundations and metadata system | planned | Metadata, keyword decisions, JSON-driven SEO fields |
+| [M21](m21.md) | Content governance system | planned | Editorial rules, schemas, and change workflow |
+| [M22](m22.md) | Asset readiness and media audit | planned | Images, rights, alt text, compression, and social assets |
+| [M23](m23.md) | Cookie notice audit and rewrite | planned | Right-sized cookie language after deployment audit |
+| [M24](m24.md) | Privacy policy audit and rewrite | planned | Right-sized privacy language after deployment audit |
+| [M25](m25.md) | English rollout | planned | English content + real language switcher |
+| [M26](m26.md) | Valencian rollout | planned | Valencian content + extended i18n support |
+| [M27](m27.md) | Accessibility audit and remediation | planned | Keyboard, screen-reader, motion, and contrast pass |
+| [M28](m28.md) | 404 and fallback pages | planned | Not-found UX for multi-page and direct-link access |
+| [M29](m29.md) | Simplification refactor | planned | Codebase cleanup for clarity and maintainability |
+| [M30](m30.md) | Frontend regression tests | planned | Test coverage for core static-site behavior |
+| [M31](m31.md) | React migration audit | planned | Recommendation on staying static vs migrating |
 
 ## Backlog (post-v0)
 
-| Item | Description |
-|------|-------------|
-| SEO audit | Add structured metadata (`<meta>` tags, Open Graph, JSON-LD), keyword research for matrona/partera Valencia, and a clear pattern for updating SEO fields without touching HTML (driven from `content/site.json`) |
-| English | Add English as a fully supported language alongside Spanish. Requires: populating english fields in all content JSON, a functional language switcher in the nav (replace visual-only toggle), and per-language `<html lang>` management |
-| i18n — Valenciano | Add Valencian (`ca`) as a fully supported language alongside Spanish and English. Requires: populating `ca` fields in all content JSON, a functional language switcher in the nav (replace visual-only toggle), and per-language `<html lang>` management |
-| Add "education" | The goal is to provide in another section or page a more detailed list about the official masters, degrees, courses, trainings that the
-the team has done. This should provide confidence in the professionality of the team |
-| Review the language of cookies | When we deploy the webpage, audit what cookies are we really using or not. Its a super simple webpage and maybe we 
-really dont need to stress out about cookies |
-| Review the language of privacy | When we deploy the webpage, audit the language. We are not a corporate world and will not have databases of users, so
-we can't commit to ultra GDPR compliance etc. In other words, what can we live with without shooting ourselves in the foot. |
-| Add a blog/resources | Section or page to capture material that the midwifes recommend - from books, to associations, podcasts, etc |
-| Audit if we need to go multi-page instead of infinite scroll | Based on the content that will exist, what's the expert opinion of this? |
-| Audit the webpage with personas | Come up with a group of personas that we can always re-run an audit against the current or future versions of the page |
-| Audit external pages for best practices | Audit with agents how do other midwifery pages have their website, or similar community independent practice groups have their websites |
-| Simplification refactoring | When all milestones have been complete, audit the codebase for a refactor targeting simplicity and best practices of web development for html, css and js |
-| Unit tests | When refactoring has been succesful, secure the codebase with relevant unit tests for html, css, and js |
-| Audit react | Run an audit to understand if we need to migrate to React instead of html + css + js |
-| Review if we can add whatsapp or telegram | Is there a way to create a free business account in Whatsapp and/or Telegram? If so, can we open from the page
-a chat directly? |
-| Review the content of services | It feels that we can do a better job at explaining what each service is? To provide the mum and family a better view of
-what it entails? |
+The backlog items have been converted into ordered milestones `M13` through `M31`.
+
+Ordering logic:
+
+- `M12` stays next because deployment is the current unfinished core milestone and several audits depend on the live site.
+- `M13` to `M17` are discovery and product-shaping milestones. They help us decide messaging, contact channels, and whether the current single-page IA should remain in place before we add more content.
+- `M18` to `M22` are content, asset, and findability groundwork built on top of those earlier decisions.
+- `M23` and `M24` revisit legal copy only after deployment and contact-channel choices are known.
+- `M25` and `M26` delay full translation rollout until content structure, SEO fields, assets, and legal wording are more stable.
+- `M27` and `M28` harden usability and routing once the site has likely grown beyond the original single-page shape.
+- `M29` to `M31` are technical hardening and architecture review after the product surface is more mature.
+
+Audit milestones are intentionally not Haiku-led by default. Where external research is needed, the milestone file includes a human-run prompt so results from ChatGPT, Claude, Grok, or another provider can be pasted back into the repo workflow.
 
 ## Design Reference
 
