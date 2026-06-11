@@ -22,7 +22,13 @@
 | Item | Description |
 |------|-------------|
 | SEO audit | Add structured metadata (`<meta>` tags, Open Graph, JSON-LD), keyword research for matrona/partera Valencia, and a clear pattern for updating SEO fields without touching HTML (driven from `content/site.json`) |
+| English | Add English as a fully supported language alongside Spanish. Requires: populating english fields in all content JSON, a functional language switcher in the nav (replace visual-only toggle), and per-language `<html lang>` management |
 | i18n — Valenciano | Add Valencian (`ca`) as a fully supported language alongside Spanish and English. Requires: populating `ca` fields in all content JSON, a functional language switcher in the nav (replace visual-only toggle), and per-language `<html lang>` management |
+| Add "education" | The goal is to provide in another section or page a more detailed list about the official masters, degrees, courses, trainings that the
+the team has done. This should provide confidence in the professionality of the team |
+| Add a blog/resources | Section or page to capture material that the midwifes recommend - from books, to associations, podcasts, etc |
+| Simplification refactoring | When all milestones have been complete, audit the codebase for a refactor targeting simplicity and best practices of web development for html, css and js |
+| Unit tests | When refactoring has been succesful, secure the codebase with relevant unit tests for html, css, and js |
 
 ## Design Reference
 
