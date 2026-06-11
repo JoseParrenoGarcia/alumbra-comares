@@ -12,9 +12,9 @@
 | [M6](m6.md) | Meet the midwives section | complete | Three profile cards |
 | [M7](m7.md) | Services section | complete | Service cards with placeholders |
 | [M8](m8.md) | Events section | complete | Event cards with placeholder data |
-| [M9](m9.md) | Contact section and form | pending | Form + contact channels, Formspree |
-| [M10](m10.md) | Testimonials and brochure placeholders | pending | Placeholder blocks |
-| [M11](m11.md) | Privacy and cookie pages | pending | Lightweight draft legal pages |
+| [M9](m9.md) | Contact section and form | complete | Form + contact channels, Formspree |
+| [M10](m10.md) | Testimonials and brochure placeholders | complete | Placeholder blocks |
+| [M11](m11.md) | Privacy and cookie pages | complete | Lightweight draft legal pages |
 | [M12](m12.md) | GitHub Pages deployment | pending | Deploy config, final checks |
 
 ## Backlog (post-v0)
