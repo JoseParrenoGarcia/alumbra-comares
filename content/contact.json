@@ -43,15 +43,6 @@
       "value": "alumbracomares@outlook.com"
     },
     {
-      "type": "phone",
-      "label": {
-        "es": "Teléfono",
-        "en": null,
-        "ca": null
-      },
-      "value": "+34 656479893"
-    },
-    {
       "type": "instagram",
       "label": {
         "es": "Instagram",
