@@ -17,7 +17,8 @@
 | [M11](milestones/m11.md) | Privacy and cookie pages | complete | Lightweight draft legal pages |
 | [M12](milestones/m12.md) | GitHub Pages deployment | complete | Deploy config, final checks |
 | [M13](milestones/m13.md) | External website benchmark audit | complete | Research pack + benchmark synthesis |
-| [M14](milestones/m14.md) | Persona audit framework | planned | Reusable personas + audit rubric |
+| [M14](milestones/m14.md) | Persona audit framework | complete | Reusable personas + audit rubric |
+| [M14B](milestones/m14b.md) | Site scoring skill | planned | Executable skill that scores any site iteration against all 13 personas and canvas |
 | [M15](milestones/m15.md) | Services content review and rewrite | planned | Clearer service explanations in content JSON |
 | [M16](milestones/m16.md) | WhatsApp / Telegram feasibility review | planned | Contact-channel recommendation and implementation brief |
 | [M16A](milestones/m16a.md) | WhatsApp contact implementation | planned | Add WhatsApp CTA to contact section (depends on M16 approval) |
