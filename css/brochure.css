@@ -1,0 +1,96 @@
+#recursos {
+  background-color: var(--color-bg-soft);
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.brochure-container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.brochure-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-terracotta);
+  text-align: center;
+  margin-bottom: var(--space-16);
+  letter-spacing: var(--tracking-wide);
+}
+
+.brochure-card {
+  background-color: var(--color-bg-wash);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-12);
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.brochure-card:hover {
+  box-shadow: 0 4px 16px rgba(160, 82, 45, 0.08);
+  transform: translateY(-3px);
+}
+
+.brochure-card.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-gentle), transform var(--transition-gentle);
+}
+
+.brochure-card.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brochure-card.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.brochure-card__icon {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.brochure-card__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.brochure-card__description {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+.brochure-card__note {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+.brochure-card__cta {
+  align-self: center;
+}
+
+.brochure-card__cta[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

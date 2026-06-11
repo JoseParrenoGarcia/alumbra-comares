@@ -1,0 +1,116 @@
+#testimonios {
+  background-color: var(--color-bg-base);
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.testimonials-container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.testimonials-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-terracotta);
+  text-align: center;
+  margin-bottom: var(--space-16);
+  letter-spacing: var(--tracking-wide);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.testimonial-card {
+  background-color: var(--color-bg-wash);
+  padding: var(--space-12);
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 4px 16px rgba(160, 82, 45, 0.08);
+  transform: translateY(-3px);
+}
+
+.testimonial-card.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-gentle), transform var(--transition-gentle);
+}
+
+.testimonial-card.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.testimonial-quote {
+  font-family: 'Dancing Script', cursive;
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--color-terracotta-mid);
+  line-height: var(--leading-body);
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--color-terracotta-pale);
+  font-style: italic;
+  margin: 0;
+}
+
+.testimonial-quote.placeholder {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.testimonial-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.testimonial-name.placeholder {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.testimonial-role {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 300;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin: 0;
+}
+
+.testimonial-role.placeholder {
+  font-style: italic;
+}
