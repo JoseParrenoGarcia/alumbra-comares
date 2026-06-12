@@ -1,0 +1,42 @@
+{
+  "section": { "es": "Cómo trabajamos", "en": null },
+  "intro": { "es": "Tres matronas, un modelo de atención compartido. Así es como acompañamos a las familias que confían en nosotras.", "en": null },
+  "blocks": [
+    {
+      "id": "hww-01",
+      "title": { "es": "Nuestro modelo de atención", "en": null },
+      "body": { "es": "Somos un colectivo de tres matronas que trabajamos juntas y nos conocemos bien. Esto significa que la familia que atendemos siempre tiene continuidad: no cambia de profesional con cada cita. Las tres compartimos valores, metodología y el historial de cada caso, de modo que si en un momento clave estamos dos de nosotras, la atención no pierde ni calidad ni contexto.", "en": null },
+      "placeholder": false
+    },
+    {
+      "id": "hww-02",
+      "title": { "es": "¿Para quién es este acompañamiento?", "en": null },
+      "body": { "es": "Para cualquier persona que quiera una atención más cercana, más tiempo y más continuidad de la que el sistema público puede ofrecer. Tanto si es tu primer embarazo como si ya has pasado por uno, tanto si tienes claro lo que quieres como si todavía estás explorando opciones. También acompañamos a parejas, familias monoparentales y personas que llegan con una experiencia anterior difícil y quieren que esta vez sea diferente.", "en": null },
+      "placeholder": false
+    },
+    {
+      "id": "hww-03",
+      "title": { "es": "Seguridad y derivaciones", "en": null },
+      "body": { "es": "La seguridad de madre y bebé es el eje de todo lo que hacemos. Trabajamos con protocolos de seguimiento y criterios de derivación claros. Si en cualquier momento del proceso —embarazo, parto o posparto— detectamos que la situación requiere atención hospitalaria, lo comunicamos de inmediato y coordinamos el traslado. __PLACEHOLDER__: protocolos específicos y acuerdos con centros pendientes de confirmar con las fundadoras.", "en": null },
+      "placeholder": true
+    },
+    {
+      "id": "hww-04",
+      "title": { "es": "Cómo nos relacionamos con el sistema público", "en": null },
+      "body": { "es": "Nuestro acompañamiento no reemplaza ni entra en conflicto con el sistema público. Lo complementa. Muchas de las familias que atendemos continúan con sus revisiones habituales en el centro de salud o en el hospital. Nosotras añadimos tiempo, continuidad y cercanía. Si en algún momento tienes dudas sobre qué parte cubre cada una, te lo explicamos con claridad.", "en": null },
+      "placeholder": false
+    },
+    {
+      "id": "hww-05",
+      "title": { "es": "El primer contacto", "en": null },
+      "body": { "es": "Puedes escribirnos por WhatsApp, email o Instagram. Respondemos en cuanto podemos y la primera conversación es sin compromiso. Te preguntaremos dónde estás en el embarazo y qué tipo de acompañamiento estás buscando. Si encaja con lo que hacemos, organizamos una primera visita para conocernos en persona.", "en": null },
+      "placeholder": false
+    },
+    {
+      "id": "hww-06",
+      "title": { "es": "Zona de atención", "en": null },
+      "body": { "es": "__PLACEHOLDER__: zona geográfica de cobertura pendiente de confirmar con las fundadoras.", "en": null },
+      "placeholder": true
+    }
+  ]
+}

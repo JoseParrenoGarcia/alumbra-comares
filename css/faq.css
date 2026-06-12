@@ -1,0 +1,101 @@
+/* ── FAQ section ─────────────────────────────────────────────────── */
+
+#faq {
+  background-color: var(--color-bg-soft);
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+#faq h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+#faq-intro {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--text-md);
+  margin-bottom: var(--space-16);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-6) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  transition: color var(--transition-base);
+}
+
+.faq-question:hover {
+  color: var(--color-terracotta);
+}
+
+.faq-question:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  font-size: var(--text-md);
+  color: var(--color-terracotta-mid);
+  transition: transform var(--transition-base);
+  line-height: 1;
+  user-select: none;
+}
+
+.faq-item[open] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding-bottom: var(--space-6);
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-body);
+  max-width: 680px;
+}
+
+.faq-answer.placeholder {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-icon {
+    transition: none;
+  }
+}

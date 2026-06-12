@@ -1,0 +1,96 @@
+/* ── How We Work section ─────────────────────────────────────────── */
+
+#como-trabajamos {
+  background-color: var(--color-bg-base);
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+#como-trabajamos h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+#hww-intro {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--text-md);
+  margin-bottom: var(--space-16);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hww-grid {
+  display: grid;
+  gap: var(--space-8);
+  grid-template-columns: 1fr;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .hww-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hww-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.hww-block {
+  background-color: var(--color-bg-wash);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-8);
+}
+
+.hww-block__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  margin-top: 0;
+}
+
+.hww-block__body {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+.hww-block__body.placeholder {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Reveal animation — same pattern as service-card */
+.hww-block.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-gentle), transform var(--transition-gentle);
+}
+
+.hww-block.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hww-block.reveal,
+  .hww-block.reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
