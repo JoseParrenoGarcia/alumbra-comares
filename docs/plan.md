@@ -39,7 +39,7 @@
 | [M29](milestones/m29.md) | Simplification refactor | planned | Codebase cleanup for clarity and maintainability |
 | [M30](milestones/m30.md) | Frontend regression tests | planned | Test coverage for core static-site behavior |
 | [M31](milestones/m31.md) | React migration audit | planned | Recommendation on staying static vs migrating |
-| [M32](milestones/m32.md) | Mobile UX pass — section sizing and carousels | planned | Right-size large mobile sections; add carousels for testimonials and events |
+| [M32](milestones/m32.md) | Mobile UX pass — section sizing and carousels | complete | Right-size large mobile sections; add carousels for testimonials and events |
 
 ## Backlog (post-v0)
 
