@@ -169,6 +169,13 @@ async function populateHowWeWork() {
   });
 }
 
+function getFriendlyAnswer(item) {
+  if (item.placeholder || item.answer.es.includes('__PLACEHOLDER__')) {
+    return 'Contacta directamente para información actualizada';
+  }
+  return item.answer.es;
+}
+
 async function populateFaq() {
   const data = await loadJSON('content/faq.json');
 
@@ -181,16 +188,90 @@ async function populateFaq() {
     details.className = 'faq-item';
 
     const answerClass = item.placeholder ? 'faq-answer placeholder' : 'faq-answer';
+    const answerText = getFriendlyAnswer(item);
 
     details.innerHTML = `
       <summary class="faq-question">
         <span>${item.question.es}</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </summary>
-      <p class="${answerClass}">${item.answer.es}</p>
+      <p class="${answerClass}">${answerText}</p>
     `;
     list.appendChild(details);
   });
+}
+
+async function populateFaqPage() {
+  const data = await loadJSON('content/faq.json');
+
+  document.getElementById('faq-page-heading').textContent = data.section.es;
+  document.getElementById('faq-page-intro').textContent = data.intro.es;
+
+  const list = document.getElementById('faq-page-list');
+  data.items.forEach((item) => {
+    const details = document.createElement('details');
+    details.className = 'faq-item';
+
+    const answerClass = item.placeholder ? 'faq-answer placeholder' : 'faq-answer';
+    const answerText = getFriendlyAnswer(item);
+
+    details.innerHTML = `
+      <summary class="faq-question">
+        <span>${item.question.es}</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <p class="${answerClass}">${answerText}</p>
+    `;
+    list.appendChild(details);
+  });
+
+  // Generate and inject JSON-LD schema
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": data.items.map(item => ({
+      "@type": "Question",
+      "name": item.question.es,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": getFriendlyAnswer(item)
+      }
+    }))
+  };
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(jsonLd, null, 2);
+  document.head.appendChild(script);
+}
+
+async function populateFaqSummary() {
+  const data = await loadJSON('content/faq.json');
+  const summaryItems = data.items.slice(0, 5);
+
+  const list = document.getElementById('faq-list');
+  summaryItems.forEach((item) => {
+    const details = document.createElement('details');
+    details.className = 'faq-item';
+
+    const answerClass = item.placeholder ? 'faq-answer placeholder' : 'faq-answer';
+    const answerText = getFriendlyAnswer(item);
+
+    details.innerHTML = `
+      <summary class="faq-question">
+        <span>${item.question.es}</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <p class="${answerClass}">${answerText}</p>
+    `;
+    list.appendChild(details);
+  });
+
+  // Add "ver todas las preguntas" link
+  const linkContainer = document.createElement('div');
+  linkContainer.className = 'faq-summary-link';
+  linkContainer.innerHTML = `<a href="/faq.html" class="faq-all-link">Ver todas las preguntas →</a>`;
+  list.parentNode.insertBefore(linkContainer, list.nextSibling);
 }
 
 async function populateFormacion() {
@@ -287,39 +368,53 @@ function revealSection(id) {
   document.querySelectorAll(`#${id} .reveal`).forEach(el => el.classList.add('visible'));
 }
 
+function isHomepage() {
+  return window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+}
+
+function isFaqPage() {
+  return window.location.pathname === '/faq.html' || window.location.pathname.endsWith('/faq.html');
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
-  await loadSection('quienes-somos', 'sections/quienes-somos.html');
-  revealSection('quienes-somos');
-  await loadSection('por-que', 'sections/por-que.html');
-  revealSection('por-que');
-  await loadSection('equipo', 'sections/equipo.html');
-  await populateTeam();
-  revealSection('equipo');
-  await loadSection('formacion', 'sections/formacion.html');
-  await populateFormacion();
-  revealSection('formacion');
-  await loadSection('servicios', 'sections/servicios.html');
-  await populateServices();
-  revealSection('servicios');
-  await loadSection('como-trabajamos', 'sections/como-trabajamos.html');
-  await populateHowWeWork();
-  revealSection('como-trabajamos');
-  await loadSection('faq', 'sections/faq.html');
-  await populateFaq();
-  revealSection('faq');
-  await loadSection('eventos', 'sections/eventos.html');
-  await populateEvents();
-  initCarousel('events-grid', 'eventos-dots');
-  revealSection('eventos');
-  await loadSection('testimonios', 'sections/testimonios.html');
-  await populateTestimonials();
-  initCarousel('testimonials-grid', 'testimonials-dots');
-  revealSection('testimonios');
-  await loadSection('recursos', 'sections/recursos.html');
-  await populateResources();
-  initCarousel('recursos-grid', 'recursos-dots');
-  revealSection('recursos');
-  await loadSection('contacto', 'sections/contacto.html');
-  await populateContact();
-  revealSection('contacto');
+  if (isFaqPage()) {
+    // Full FAQ page
+    await populateFaqPage();
+  } else if (isHomepage()) {
+    // Homepage: load all sections including FAQ summary
+    await loadSection('quienes-somos', 'sections/quienes-somos.html');
+    revealSection('quienes-somos');
+    await loadSection('por-que', 'sections/por-que.html');
+    revealSection('por-que');
+    await loadSection('equipo', 'sections/equipo.html');
+    await populateTeam();
+    revealSection('equipo');
+    await loadSection('formacion', 'sections/formacion.html');
+    await populateFormacion();
+    revealSection('formacion');
+    await loadSection('servicios', 'sections/servicios.html');
+    await populateServices();
+    revealSection('servicios');
+    await loadSection('como-trabajamos', 'sections/como-trabajamos.html');
+    await populateHowWeWork();
+    revealSection('como-trabajamos');
+    await loadSection('faq', 'sections/faq.html');
+    await populateFaqSummary();
+    revealSection('faq');
+    await loadSection('eventos', 'sections/eventos.html');
+    await populateEvents();
+    initCarousel('events-grid', 'eventos-dots');
+    revealSection('eventos');
+    await loadSection('testimonios', 'sections/testimonios.html');
+    await populateTestimonials();
+    initCarousel('testimonials-grid', 'testimonials-dots');
+    revealSection('testimonios');
+    await loadSection('recursos', 'sections/recursos.html');
+    await populateResources();
+    initCarousel('recursos-grid', 'recursos-dots');
+    revealSection('recursos');
+    await loadSection('contacto', 'sections/contacto.html');
+    await populateContact();
+    revealSection('contacto');
+  }
 });
