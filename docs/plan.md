@@ -28,7 +28,7 @@
 | [M19](milestones/m19.md) | Resources library / blog | complete | Recommended materials section or page |
 | [M17](milestones/m17.md) | Information architecture audit | complete | Hybrid IA decision — Option B, all founder questions resolved 2026-06-12 |
 | [M17.1](milestones/m17.1.md) | `/faq` standalone page | complete | Split FAQ to own page with FAQ schema; homepage keeps 5-item summary |
-| [M17.2](milestones/m17.2.md) | `/como-trabajamos` standalone page + nav switch | planned | Split How We Work/Safety; switch nav from anchors to page links (all at once) |
+| [M17.2](milestones/m17.2.md) | `/como-trabajamos` standalone page + nav switch | complete | Split How We Work/Safety; switch nav from anchors to page links (all at once) |
 | [M17.3](milestones/m17.3.md) | `/servicios` page + services content rewrite | planned | Services rewrite (M15 scope) + page split as one PR |
 | [M17.4](milestones/m17.4.md) | `/recursos` standalone page | planned | Split resources library; homepage keeps 3-item summary + brochure CTA |
 | [M17.5](milestones/m17.5.md) | `/formacion` standalone page | planned | Optional — split credentials page once real credentials are populated |

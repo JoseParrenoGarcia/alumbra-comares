@@ -399,6 +399,102 @@ async function populateResources() {
   });
 }
 
+async function populateRecursosPage() {
+  const data = await loadJSON('content/resources.json');
+
+  document.getElementById('recursos-page-heading').textContent = data.section.es;
+  document.getElementById('recursos-page-intro').textContent = data.intro.es;
+
+  const grid = document.getElementById('recursos-page-grid');
+  data.items.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'recurso-card reveal';
+    card.style.transitionDelay = `${i * 80}ms`;
+
+    const isPlaceholderLink = item.placeholder || item.link === '__PLACEHOLDER__';
+    const linkClass = isPlaceholderLink ? 'recurso-card__link placeholder' : 'recurso-card__link';
+    const linkHref = isPlaceholderLink ? '#' : item.link;
+    const linkTarget = isPlaceholderLink ? '' : ' target="_blank" rel="noopener"';
+    const linkText = isPlaceholderLink ? 'Enlace próximamente' : 'Ver recurso';
+
+    card.innerHTML = `
+      <div class="recurso-card__category">${item.category.es}</div>
+      <div class="recurso-card__title">${item.title.es}</div>
+      <p class="recurso-card__description">${item.description.es}</p>
+      <div class="recurso-card__meta">
+        <span class="recurso-card__author">${item.author}</span>
+      </div>
+      <a href="${linkHref}" class="${linkClass}"${linkTarget}>${linkText}</a>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+async function populateFormacionPage() {
+  const data = await loadJSON('content/education.json');
+  const teamData = await loadJSON('content/team.json');
+
+  document.getElementById('formacion-page-heading').textContent = data.section.es;
+  document.getElementById('formacion-page-intro').textContent = data.intro.es;
+
+  const container = document.getElementById('formacion-page-members');
+  teamData.members.forEach((member, i) => {
+    const card = document.createElement('div');
+    card.className = 'formacion-member reveal';
+    card.style.transitionDelay = `${i * 80}ms`;
+
+    let languagesHtml = '';
+    if (member.languages) {
+      const langItems = member.languages.map(lang => {
+        const isPlaceholder = lang.startsWith('__PLACEHOLDER__');
+        if (isPlaceholder) return null;
+        const langClass = 'formacion-member__languages';
+        return `<div class="${langClass}">${lang}</div>`;
+      }).filter(Boolean).join('');
+      if (langItems) {
+        languagesHtml = `<div class="formacion-member__section"><div class="formacion-member__section-title">Idiomas</div>${langItems}</div>`;
+      }
+    }
+
+    let credentialsHtml = '';
+    if (member.credentials && member.credentials.length > 0) {
+      const credItems = member.credentials.map(cred => {
+        if (cred.placeholder || cred.title.es.startsWith('__PLACEHOLDER__')) {
+          return null;
+        }
+        const credClass = 'formacion-member__item';
+        return `<div class="${credClass}">${cred.title.es}</div>`;
+      }).filter(Boolean).join('');
+      if (credItems) {
+        credentialsHtml = `<div class="formacion-member__section"><div class="formacion-member__section-title">Credenciales</div>${credItems}</div>`;
+      }
+    }
+
+    let trainingHtml = '';
+    if (member.training && member.training.length > 0) {
+      const trainItems = member.training.map(train => {
+        if (train.placeholder || train.title.es.startsWith('__PLACEHOLDER__')) {
+          return null;
+        }
+        const trainClass = 'formacion-member__item';
+        return `<div class="${trainClass}">${train.title.es}</div>`;
+      }).filter(Boolean).join('');
+      if (trainItems) {
+        trainingHtml = `<div class="formacion-member__section"><div class="formacion-member__section-title">Formación</div>${trainItems}</div>`;
+      }
+    }
+
+    card.innerHTML = `
+      <div class="formacion-member__name">${member.name}</div>
+      <div class="formacion-member__credentials">${member.role.es}</div>
+      ${languagesHtml}
+      ${credentialsHtml}
+      ${trainingHtml}
+    `;
+    container.appendChild(card);
+  });
+}
+
 function populatePageLinks() {
   const section = document.getElementById('page-links');
   if (!section) return;
@@ -415,6 +511,18 @@ function populatePageLinks() {
         <h3 class="page-link-card__title">¿Quieres saber cómo trabajamos?</h3>
         <p class="page-link-card__desc">Conoce nuestro modelo de atención compartida y cómo acompañamos cada etapa.</p>
         <span class="page-link-card__cta">Ver cómo trabajamos →</span>
+      </a>
+      <a href="/recursos.html" class="page-link-card reveal">
+        <div class="page-link-card__icon" aria-hidden="true">📚</div>
+        <h3 class="page-link-card__title">Recursos recomendados</h3>
+        <p class="page-link-card__desc">Libros, asociaciones, podcasts y recursos online seleccionados para acompañarte.</p>
+        <span class="page-link-card__cta">Ver biblioteca →</span>
+      </a>
+      <a href="/formacion.html" class="page-link-card reveal">
+        <div class="page-link-card__icon" aria-hidden="true">🎓</div>
+        <h3 class="page-link-card__title">Formación y credenciales</h3>
+        <p class="page-link-card__desc">Conoce la formación, especialización y experiencia de nuestras tres matronas.</p>
+        <span class="page-link-card__cta">Ver formación →</span>
       </a>
     </div>
   `;
@@ -441,6 +549,14 @@ function isComoTrabajamosPage() {
   return window.location.pathname === '/como-trabajamos.html' || window.location.pathname.endsWith('/como-trabajamos.html');
 }
 
+function isRecursosPage() {
+  return window.location.pathname === '/recursos.html' || window.location.pathname.endsWith('/recursos.html');
+}
+
+function isFormacionPage() {
+  return window.location.pathname === '/formacion.html' || window.location.pathname.endsWith('/formacion.html');
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   if (isFaqPage()) {
     // Full FAQ page
@@ -449,6 +565,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Full How We Work page
     await populateHowWeWorkPage();
     revealSection('como-trabajamos');
+  } else if (isRecursosPage()) {
+    // Full Recursos page
+    await populateRecursosPage();
+    revealSection('recursos-page');
+  } else if (isFormacionPage()) {
+    // Full Formacion page
+    await populateFormacionPage();
+    revealSection('formacion-page');
   } else if (isHomepage()) {
     // Homepage: load all sections including FAQ summary
     await loadSection('quienes-somos', 'sections/quienes-somos.html');
@@ -458,9 +582,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadSection('equipo', 'sections/equipo.html');
     await populateTeam();
     revealSection('equipo');
-    await loadSection('formacion', 'sections/formacion.html');
-    await populateFormacion();
-    revealSection('formacion');
     await loadSection('servicios', 'sections/servicios.html');
     await populateServices();
     revealSection('servicios');
@@ -474,10 +595,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     await populateTestimonials();
     initCarousel('testimonials-grid', 'testimonials-dots');
     revealSection('testimonios');
-    await loadSection('recursos', 'sections/recursos.html');
-    await populateResources();
-    initCarousel('recursos-grid', 'recursos-dots');
-    revealSection('recursos');
     await loadSection('contacto', 'sections/contacto.html');
     await populateContact();
     revealSection('contacto');
