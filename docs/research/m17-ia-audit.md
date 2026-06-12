@@ -613,106 +613,40 @@ M17 closes once the founders sign off. Implementation work happens in subsequent
 
 ---
 
-## 11. Open Questions for Founder Brainstorm
+## 11. Founder Decisions (Resolved 2026-06-12)
 
-The two source audits agree on the recommendation (Option B) but diverge on a handful of judgement calls. These are the questions to discuss before finalising the migration plan:
+All six open questions have been answered. Decisions recorded below. §11 is now closed — no further brainstorming needed before updating the PRD and plan.md.
 
-### Q1 — Phased migration order
+### Q1 — Phased migration order ✅
+**Decision:** `/faq` → `/como-trabajamos` → `/servicios` (coupled with M15) → `/recursos` → `/formacion` (optional, later) → `/contacto` (optional, low priority).
 
-The two passes propose different orders for which pages to split first.
+Rationale: FAQ first for SEO leverage; Cómo Trabajamos second because content is already mature (M17B done) and it directly addresses the highest trust gaps (C17, P7, P8, P9, P12); Servicios coupled with M15 so rewritten content lands directly on the new page.
 
-**Pass 1 (Opus session)** order:
-1. `/faq` — highest SEO leverage, FAQ schema, lowest implementation risk
-2. `/recursos` — already structured for it, supports future blog
-3. `/servicios` — after M15 services rewrite
-4. `/como-trabajamos` — addresses C17 safety/transfer
-5. *(optional)* `/formacion` — after credentials are real
-6. *(optional)* `/contacto` — low priority
+### Q2 — Placeholder handling on split pages ✅
+**Decision:** Show placeholder fields with honest, user-friendly labels (e.g. "Tarifas — pendientes de confirmar; contacta para información actualizada"). Do not show raw `__PLACEHOLDER__` strings to visitors. Do not delay structural splits waiting for content.
 
-**Pass 2 (independent)** order:
-1. `/faq` — content already exists from M17A
-2. `/como-trabajamos` — content already exists from M17B; safety/continuity is trust-critical
-3. `/servicios` — strategically important, but can split shell first and let M15 deepen
-4. `/recursos` — unbounded but many placeholder links currently
-5. `/formacion` — valuable but depends on M18 placeholder population
-6. `/contacto` — optional and late
+### Q3 — Nav switch timing ✅
+**Decision:** Switch the whole nav to page links all at once after Phase 1 + Phase 2 land (`/faq` + `/como-trabajamos`). One clear moment of change, not a gradual label-by-label update.
 
-**Where they agree:**
-- `/faq` is Phase 1 (everyone agrees)
-- `/formacion` and `/contacto` are last/optional
-- `/servicios` should not block on M15 — the shell can be created first
+### Q4 — `/servicios` split coupled or decoupled from M15 ✅
+**Decision:** Coupled — M15 services rewrite and `/servicios` page split happen as one PR. Rewritten content lands directly on the new page; no intermediate shell.
 
-**Where they diverge:**
-- Pass 1 puts `/recursos` second (clean structural opportunity); Pass 2 puts `/como-trabajamos` second (highest trust value, content already mature)
+### Q5 — Events cadence ✅
+**Decision:** Events are sporadic (not monthly). Eventos stays on the homepage. No `/eventos` page planned.
 
-**Question for founders:** Which trade-off matters more in the next 1–2 months?
-- (a) Cleaning up homepage scroll depth fastest by splitting list-bearing surfaces (FAQ + recursos first)
-- (b) Strengthening trust signals fastest by splitting safety-explainer surfaces (FAQ + como-trabajamos first)
-
-Both options end at the same place after 4 phases. The difference is which gain shows up first.
-
-### Q2 — Whether to wait for content (M15, M18) before structural splits
-
-**Pass 1** treats content readiness as decoupled from IA: split now, fill progressively, accept honest placeholders.
-
-**Pass 2** is more cautious: a thin subpage can hurt trust more than no subpage. Where content is still placeholder-heavy (M15 services, M18 credentials), it advises either waiting or being explicit about the placeholder framing.
-
-**Where they agree:** the structural decision itself does not need to wait. The page architecture can be set up early.
-
-**Where they diverge:** Pass 1 is more comfortable with thin shells; Pass 2 wants honest labelling and a strong homepage summary so thin subpages don't carry the trust burden alone.
-
-**Question for founders:** When a page is split before its content is fully populated:
-- (a) Show the page with placeholder fields clearly labelled (e.g. "Tarifas — pendientes de confirmar; contacta para información actualizada")
-- (b) Hide individual placeholder rows and only render real content (page renders thinner but never shows `__PLACEHOLDER__`)
-- (c) Don't split until content is ≥80% real (delay structural change until M15/M18 land)
-
-### Q3 — Should the navigation rename happen all at once or incrementally?
-
-Both passes agree that nav must change from anchors to page links once detail pages exist. They differ slightly on timing.
-
-**Pass 1:** Migrate nav once after Phase 1 and 2 land; commit to all-page-links navigation post-Phase 2.
-
-**Pass 2:** Each split-off page brings its own nav update; the site shifts page-by-page.
-
-**Question for founders:**
-- (a) Switch the whole nav to page links the moment the first detail page exists (cleaner for users; some links may scroll to homepage anchors during the transition)
-- (b) Update one nav label per page split (more PRs, less consistent during transition)
-
-### Q4 — Position of `/servicios` in the order
-
-**Pass 1** says do `/servicios` after M15 (so the rewritten content lands on the new page).
-
-**Pass 2** says split the shell first, then let M15 harden the content on the existing URL — so M15 doesn't have to also do an IA migration.
-
-**Question for founders:**
-- (a) M15 (services rewrite) and `/servicios` split happen together as one PR — coupled work
-- (b) `/servicios` shell splits before M15 with current placeholder content; M15 lands later as a content-only PR on the new URL — decoupled work
-
-### Q5 — Eventos and Testimonios on homepage forever?
-
-Both passes leave events and testimonios on the homepage in v1. Both flag that if event volume becomes real, `/eventos` may need its own page.
-
-**Question for founders:** What is the realistic event cadence? If you anticipate ≥1 event per month, `/eventos` becomes a Phase 5 candidate. If events stay sporadic (1 every quarter or less), homepage placement is fine.
-
-### Q6 — Optional `/equipo` page
-
-Both passes mark `/equipo` as deferred. The 3 midwife profiles work on the homepage. But P12 (sceptical family) and P13 (professional referrer) often want a bookmarkable team URL.
-
-**Question for founders:** Is a dedicated `/equipo` page worth doing once `/formacion` exists? Or do they merge?
-- (a) `/equipo` and `/formacion` stay merged as homepage sections forever
-- (b) `/formacion` becomes a page; team stays on homepage
-- (c) Both `/equipo` and `/formacion` become pages — `/equipo` carries the human story (bios, quotes), `/formacion` carries the formal credentials
+### Q6 — `/equipo` and `/formacion` as pages ✅
+**Decision:** `/formacion` becomes its own page (Phase 5, once credentials are real). Team bios stay on the homepage. No separate `/equipo` page.
 
 ---
 
 ## 12. Five-Bullet Summary
 
 - **The homepage has crossed a structural threshold.** 12 sections, 17–28 mobile screens, 5 sections invisible from nav. Single-page is at its limit; English (M25) and Valencian (M26) rollouts will break it.
-- **Recommendation: Option B (hybrid).** Keep the homepage as a curated landing with summary blocks. Split four surfaces onto their own URLs: `/faq`, plus three others — order TBD pending §11 Q1 brainstorm.
+- **Recommendation: Option B (hybrid).** Keep the homepage as a curated landing with summary blocks. Split four surfaces in this order: `/faq` → `/como-trabajamos` → `/servicios` (with M15) → `/recursos`. `/formacion` optional later.
 - **Persona fit improves uniformly.** Information-seekers (P2, P4, P7, P8, P11, P13) jump from "poor/mixed" to "high". Casual personas (P1, P5, P12) keep their current homepage experience. No persona is worse off.
 - **i18n becomes incremental.** M25 English rollout becomes 4–6 small PRs (one per page) instead of an all-or-nothing translation of 12 sections. Same for M26 Valencian.
-- **Migration is phased.** One PR per page. The homepage continues to function during each step. No big-bang rewrite, no regression risk. Six open questions in §11 to discuss before finalising the order.
+- **Migration is phased.** One PR per page. The homepage continues to function during each step. No big-bang rewrite, no regression risk. Nav switches to page links all at once after Phase 1+2 land.
 
 ---
 
-*End of audit. Recommendation pending founder approval and answers to §11.*
+*Audit complete. All decisions resolved 2026-06-12. Next steps: update PRD §10 and docs/plan.md with phased migration milestones.*
