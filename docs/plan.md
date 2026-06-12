@@ -24,8 +24,8 @@
 | [M16A](milestones/m16a.md) | WhatsApp contact implementation | planned | Add WhatsApp CTA to contact section (depends on M16 approval) |
 | [M17A](milestones/m17a.md) | FAQ surface | complete | Anxiety-reducing FAQs for services, pricing, safety, and logistics |
 | [M17B](milestones/m17b.md) | How We Work / Safety page | complete | Eligibility, boundaries, transfers, and practical care model |
-| [M18](milestones/m18.md) | Education and credentials section | planned | Trust-building content block or page |
-| [M19](milestones/m19.md) | Resources library / blog | planned | Recommended materials section or page |
+| [M18](milestones/m18.md) | Education and credentials section | complete | Trust-building content block or page |
+| [M19](milestones/m19.md) | Resources library / blog | complete | Recommended materials section or page |
 | [M17](milestones/m17.md) | Information architecture audit | planned | Single-page vs multi-page recommendation — run after M17A, M17B, M18, M19 are in place |
 | [M20](milestones/m20.md) | SEO foundations and metadata system | planned | Metadata, keyword decisions, JSON-driven SEO fields |
 | [M21](milestones/m21.md) | Content governance system | planned | Editorial rules, schemas, and change workflow |
