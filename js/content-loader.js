@@ -499,30 +499,32 @@ function populatePageLinks() {
   const section = document.getElementById('page-links');
   if (!section) return;
   section.innerHTML = `
-    <div class="page-links-container">
-      <a href="/faq.html" class="page-link-card reveal">
-        <div class="page-link-card__icon" aria-hidden="true">💬</div>
-        <h3 class="page-link-card__title">¿Tienes más preguntas?</h3>
-        <p class="page-link-card__desc">Resolvemos tus dudas sobre servicios, precios, seguridad y logística.</p>
-        <span class="page-link-card__cta">Ver preguntas frecuentes →</span>
-      </a>
+    <div class="page-links-group">
       <a href="/como-trabajamos.html" class="page-link-card reveal">
         <div class="page-link-card__icon" aria-hidden="true">🤝</div>
         <h3 class="page-link-card__title">¿Quieres saber cómo trabajamos?</h3>
         <p class="page-link-card__desc">Conoce nuestro modelo de atención compartida y cómo acompañamos cada etapa.</p>
         <span class="page-link-card__cta">Ver cómo trabajamos →</span>
       </a>
-      <a href="/recursos.html" class="page-link-card reveal">
-        <div class="page-link-card__icon" aria-hidden="true">📚</div>
-        <h3 class="page-link-card__title">Recursos recomendados</h3>
-        <p class="page-link-card__desc">Libros, asociaciones, podcasts y recursos online seleccionados para acompañarte.</p>
-        <span class="page-link-card__cta">Ver biblioteca →</span>
-      </a>
       <a href="/formacion.html" class="page-link-card reveal">
         <div class="page-link-card__icon" aria-hidden="true">🎓</div>
         <h3 class="page-link-card__title">Formación y credenciales</h3>
         <p class="page-link-card__desc">Conoce la formación, especialización y experiencia de nuestras tres matronas.</p>
         <span class="page-link-card__cta">Ver formación →</span>
+      </a>
+    </div>
+    <div class="page-links-group page-links-group--secondary">
+      <a href="/faq.html" class="page-link-card reveal">
+        <div class="page-link-card__icon" aria-hidden="true">💬</div>
+        <h3 class="page-link-card__title">¿Tienes más preguntas?</h3>
+        <p class="page-link-card__desc">Resolvemos tus dudas sobre servicios, precios, seguridad y logística.</p>
+        <span class="page-link-card__cta">Ver preguntas frecuentes →</span>
+      </a>
+      <a href="/recursos.html" class="page-link-card reveal">
+        <div class="page-link-card__icon" aria-hidden="true">📚</div>
+        <h3 class="page-link-card__title">Recursos recomendados</h3>
+        <p class="page-link-card__desc">Libros, asociaciones, podcasts y recursos online seleccionados para acompañarte.</p>
+        <span class="page-link-card__cta">Ver biblioteca →</span>
       </a>
     </div>
   `;
