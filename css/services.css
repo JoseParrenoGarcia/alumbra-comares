@@ -3,6 +3,12 @@
   padding: var(--section-padding-y) var(--section-padding-x);
 }
 
+@media (max-width: 639px) {
+  #servicios {
+    padding: var(--space-12) var(--section-padding-x);
+  }
+}
+
 #servicios h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: var(--text-2xl);
