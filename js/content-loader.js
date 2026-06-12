@@ -317,6 +317,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   revealSection('testimonios');
   await loadSection('recursos', 'sections/recursos.html');
   await populateResources();
+  initCarousel('recursos-grid', 'recursos-dots');
   revealSection('recursos');
   await loadSection('contacto', 'sections/contacto.html');
   await populateContact();
