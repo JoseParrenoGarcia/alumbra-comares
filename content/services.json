@@ -4,121 +4,210 @@
     "en": null,
     "ca": null
   },
+  "intro": {
+    "es": "Acompañamiento integral en cada etapa de tu viaje: desde la planificación del embarazo hasta la crianza temprana. Cada servicio está diseñado para apoyarte con confianza, respeto y evidencia científica.",
+    "en": null,
+    "ca": null
+  },
   "items": [
     {
+      "anchor": "seguimiento-embarazo",
       "title": {
         "es": "Seguimiento del Embarazo",
         "en": null,
         "ca": null
       },
       "description": {
-        "es": "Acompañamiento integral durante el embarazo con seguimiento personalizado basado en evidencia científica, información veraz y soporte emocional",
+        "es": "Acompañamiento personalizado durante todo tu embarazo. Revisiones regulares basadas en evidencia científica, monitorización de tu bienestar físico y emocional, información clara sobre tus opciones, y espacio seguro para tus preguntas e inquietudes. Nos enfocamos en fortalecer tu confianza en tu cuerpo.",
+        "en": null,
+        "ca": null
+      },
+      "for": {
+        "es": "Mujeres embarazadas que buscan atención individualizada con un enfoque integral.",
+        "en": null,
+        "ca": null
+      },
+      "includes": {
+        "es": "Valoración inicial, revisiones periódicas, seguimiento de analíticas, educación sanitaria y apoyo emocional.",
         "en": null,
         "ca": null
       },
       "price": {
+        "description": "Precio a consultar — contacta para información actualizada",
         "amount": "__PLACEHOLDER__",
         "currency": "EUR",
         "placeholder": true
       }
     },
     {
+      "anchor": "atencion-parto",
       "title": {
         "es": "Atención al Parto",
         "en": null,
         "ca": null
       },
       "description": {
-        "es": "Apoyo en parto hospitalario y parto domiciliario, incluyendo atención al parto en agua. Acompañamiento respetuoso, basado en el consenso y la confianza en los procesos naturales",
+        "es": "Presencia continua, empática y experta en tu parto. Respetamos tu protagonismo y tus decisiones. Trabajamos en cualquier contexto: parto hospitalario, parto domiciliario o parto en agua. Nuestro papel es acompañarte, ofrecerte confort físico y emocional, y apoyar el vínculo con tu bebé desde el primer momento.",
+        "en": null,
+        "ca": null
+      },
+      "for": {
+        "es": "Parejas gestantes y sus acompañantes que desean una atención respetuosa y continuada durante el nacimiento.",
+        "en": null,
+        "ca": null
+      },
+      "includes": {
+        "es": "Presencia continua, técnicas de confort, apoyo emocional, facilitación del piel con piel inmediato y primeras orientaciones en lactancia.",
         "en": null,
         "ca": null
       },
       "price": {
+        "description": "Precio a consultar — contacta para información actualizada",
         "amount": "__PLACEHOLDER__",
         "currency": "EUR",
         "placeholder": true
       }
     },
     {
+      "anchor": "parto-en-casa",
+      "title": {
+        "es": "Parto en Casa",
+        "en": null,
+        "ca": null
+      },
+      "description": {
+        "es": "Apoyo especializado en tu espacio seguro. Trasladamos nuestra experiencia a tu hogar, respetando tu intimidad y tus ritmos. Llevamos los protocolos de seguridad necesarios y coordinamos con los servicios sanitarios. Tu familia participa como deseas, en la atmósfera que quieres crear.",
+        "en": null,
+        "ca": null
+      },
+      "for": {
+        "es": "Gestantes de bajo riesgo que desean un parto en el entorno familiar, con atención personalizada.",
+        "en": null,
+        "ca": null
+      },
+      "includes": {
+        "es": "Visita previa de reconocimiento, atención continua durante el parto, protocolos de seguridad, coordinación sanitaria y apoyo postparto inicial.",
+        "en": null,
+        "ca": null
+      },
+      "price": {
+        "description": "Precio a consultar — contacta para información actualizada",
+        "amount": "__PLACEHOLDER__",
+        "currency": "EUR",
+        "placeholder": true
+      }
+    },
+    {
+      "anchor": "postparto",
       "title": {
         "es": "Seguimiento del Posparto",
         "en": null,
         "ca": null
       },
       "description": {
-        "es": "Cuidado integral en el posparto con seguimiento personalizado, asesoramiento en lactancia, versión cefálica externa y resolución de dudas",
+        "es": "Los primeros días y semanas después del parto son especiales. Te acompañamos en la recuperación física, resolvemos dudas sobre cuidados del recién nacido, facilitamos el inicio de la lactancia, identificamos signos de alerta y apoyamos tu bienestar emocional. Tu descanso y recuperación son prioritarios.",
+        "en": null,
+        "ca": null
+      },
+      "for": {
+        "es": "Madres recientes y sus bebés en las primeras semanas posparto.",
+        "en": null,
+        "ca": null
+      },
+      "includes": {
+        "es": "Visitas domiciliarias, evaluación puerperal, asesoramiento en lactancia, cuidados del bebé, manejo de lactancia y seguimiento emocional.",
         "en": null,
         "ca": null
       },
       "price": {
+        "description": "Precio a consultar — contacta para información actualizada",
         "amount": "__PLACEHOLDER__",
         "currency": "EUR",
         "placeholder": true
       }
     },
     {
+      "anchor": "lactancia",
       "title": {
-        "es": "Visitas Privadas a Domicilio",
+        "es": "Asesoramiento en Lactancia",
         "en": null,
         "ca": null
       },
       "description": {
-        "es": "Asesoría en anquiloglosia, lactancia, destete y alimentación del recién nacido. Valoración y acompañamiento en dudas durante gestación, posparto y crianza",
+        "es": "La lactancia es un proceso de aprendizaje para ambos. Te apoyamos resolviendo dudas, identificando dificultades (dolor, anquiloglosia, mastitis, ingurgitación) y buscando soluciones adaptadas a tu situación. Respetamos tu decisión de cómo alimentar a tu bebé, sea lactancia materna, mixta o artificial.",
+        "en": null,
+        "ca": null
+      },
+      "for": {
+        "es": "Madres con dudas sobre lactancia en cualquier etapa: inicio, dificultades o destete.",
+        "en": null,
+        "ca": null
+      },
+      "includes": {
+        "es": "Evaluación de la lactancia, orientación posicional, resolución de problemas, derivación si es necesario y apoyo continuado.",
         "en": null,
         "ca": null
       },
       "price": {
+        "description": "Precio a consultar — contacta para información actualizada",
         "amount": "__PLACEHOLDER__",
         "currency": "EUR",
         "placeholder": true
       }
     },
     {
+      "anchor": "talleres",
       "title": {
         "es": "Talleres de Preparación",
         "en": null,
         "ca": null
       },
       "description": {
-        "es": "Talleres sobre preparación a la maternidad y paternidad, lactancia materna y artificial, en colaboración con otros profesionales dedicados al cuidado de la mujer",
+        "es": "Espacios colaborativos donde ampliar tu conocimiento en grupo. Abordamos temas clave en embarazo, parto y maternidad con un enfoque participativo. Facilitamos encuentro con otras familias en tu situación. Trabajamos con profesionales especializados en lactancia, educación, movimiento y otros ámbitos de tu interés.",
+        "en": null,
+        "ca": null
+      },
+      "for": {
+        "es": "Gestantes, parejas y familias que desean prepararse y conectar con otros en un espacio seguro.",
+        "en": null,
+        "ca": null
+      },
+      "includes": {
+        "es": "Sesiones temáticas, participación grupal, materiales de apoyo y conexión con otros padres.",
         "en": null,
         "ca": null
       },
       "price": {
+        "description": "Precio a consultar — contacta para información actualizada",
         "amount": "__PLACEHOLDER__",
         "currency": "EUR",
         "placeholder": true
       }
     },
     {
+      "anchor": "tecnicas-complementarias",
       "title": {
         "es": "Técnicas y Terapias Complementarias",
         "en": null,
         "ca": null
       },
       "description": {
-        "es": "Formación y experiencia en hipnoparto, acupuntura, acupresión, rebozo y biomecánica fetal y materna. Acondicionamiento físico en el embarazo con Método AIPAP Agua y Terra",
+        "es": "Complementamos nuestra atención con herramientas que favorecen el bienestar físico y emocional. Disponemos de formación en hipnoparto, acupuntura, acupresión, rebozo, masaje, así como en biomecánica fetal y materna. En embarazo ofrecemos acondicionamiento físico seguro con el Método AIPAP.",
+        "en": null,
+        "ca": null
+      },
+      "for": {
+        "es": "Gestantes y mujeres posparto que buscan bienestar integral con abordajes complementarios.",
+        "en": null,
+        "ca": null
+      },
+      "includes": {
+        "es": "Sesiones de acupuntura, acupresión, técnicas de rebozo, clases de movimiento adaptado y asesoramiento en hipnoparto.",
         "en": null,
         "ca": null
       },
       "price": {
-        "amount": "__PLACEHOLDER__",
-        "currency": "EUR",
-        "placeholder": true
-      }
-    },
-    {
-      "title": {
-        "es": "Asesoramiento en Alimentación Complementaria",
-        "en": null,
-        "ca": null
-      },
-      "description": {
-        "es": "Asesoría en Baby Led Weaning (BLW) y alimentación complementaria para acompañar el proceso de destete con respeto a los ritmos del bebé",
-        "en": null,
-        "ca": null
-      },
-      "price": {
+        "description": "Precio a consultar — contacta para información actualizada",
         "amount": "__PLACEHOLDER__",
         "currency": "EUR",
         "placeholder": true
