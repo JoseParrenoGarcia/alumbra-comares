@@ -32,6 +32,7 @@
 | [M17.3](milestones/m17.3.md) | `/servicios` page + services content rewrite | planned | Services rewrite (M15 scope) + page split as one PR |
 | [M17.4](milestones/m17.4.md) | `/recursos` standalone page | planned | Split resources library; homepage keeps 3-item summary + brochure CTA |
 | [M17.5](milestones/m17.5.md) | `/formacion` standalone page | planned | Optional — split credentials page once real credentials are populated |
+| [M17.6](milestones/m17.6.md) | `/eventos` standalone page | planned | Split events to own page; homepage eventos section replaced by CTA card |
 | [M20](milestones/m20.md) | SEO foundations and metadata system | planned | Metadata, keyword decisions, JSON-driven SEO fields — depends on M17.1 landing first |
 | [M21](milestones/m21.md) | Content governance system | planned | Editorial rules, schemas, and change workflow |
 | [M22](milestones/m22.md) | Asset readiness and media audit | planned | Images, rights, alt text, compression, and social assets |

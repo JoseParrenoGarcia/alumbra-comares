@@ -495,6 +495,37 @@ async function populateFormacionPage() {
   });
 }
 
+async function populateEventosPage() {
+  const data = await loadJSON('content/events.json');
+  document.getElementById('eventos-page-heading').textContent = data.heading.es;
+
+  const grid = document.getElementById('eventos-page-grid');
+  if (!data.items || data.items.length === 0) {
+    grid.innerHTML = '<p class="events-empty">Próximamente nuevos eventos y talleres.</p>';
+    return;
+  }
+
+  data.items.forEach((event, i) => {
+    const card = document.createElement('div');
+    card.className = 'event-card reveal';
+    card.style.transitionDelay = `${i * 80}ms`;
+
+    const dateText = event.date === '__PLACEHOLDER__' ? 'Fecha por confirmar' : event.date;
+    const locationText = (event.location?.es === '__PLACEHOLDER__' || !event.location?.es) ? 'Valencia' : event.location.es;
+
+    card.innerHTML = `
+      <div class="event-card__header">
+        <span class="event-card__date${event.placeholder ? ' event-card__date--tbc' : ''}">${dateText}</span>
+        <span class="event-card__location">${locationText}</span>
+      </div>
+      <h3 class="event-card__title">${event.title.es}</h3>
+      <p class="event-card__desc">${event.description.es}</p>
+      <a href="#contacto" class="btn btn-primary event-card__cta">Solicitar información</a>
+    `;
+    grid.appendChild(card);
+  });
+}
+
 function populatePageLinks() {
   const section = document.getElementById('page-links');
   if (!section) return;
@@ -526,6 +557,12 @@ function populatePageLinksSecondary() {
         <h3 class="page-link-card__title">¿Tienes más preguntas?</h3>
         <p class="page-link-card__desc">Resolvemos tus dudas sobre servicios, precios, seguridad y logística.</p>
         <span class="page-link-card__cta">Ver preguntas frecuentes →</span>
+      </a>
+      <a href="/eventos.html" class="page-link-card reveal">
+        <div class="page-link-card__icon" aria-hidden="true">📅</div>
+        <h3 class="page-link-card__title">Eventos y talleres</h3>
+        <p class="page-link-card__desc">Próximos talleres y actividades para acompañarte durante el embarazo y la maternidad.</p>
+        <span class="page-link-card__cta">Ver eventos →</span>
       </a>
       <a href="/recursos.html" class="page-link-card reveal">
         <div class="page-link-card__icon" aria-hidden="true">📚</div>
@@ -566,6 +603,10 @@ function isFormacionPage() {
   return window.location.pathname === '/formacion.html' || window.location.pathname.endsWith('/formacion.html');
 }
 
+function isEventosPage() {
+  return window.location.pathname === '/eventos.html' || window.location.pathname.endsWith('/eventos.html');
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   if (isFaqPage()) {
     // Full FAQ page
@@ -582,6 +623,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Full Formacion page
     await populateFormacionPage();
     revealSection('formacion-page');
+  } else if (isEventosPage()) {
+    // Full Eventos page
+    await populateEventosPage();
+    revealSection('eventos-page');
   } else if (isHomepage()) {
     // Homepage: load all sections including FAQ summary
     await loadSection('quienes-somos', 'sections/quienes-somos.html');
@@ -596,10 +641,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     revealSection('servicios');
     populatePageLinks();
     revealSection('page-links');
-    await loadSection('eventos', 'sections/eventos.html');
-    await populateEvents();
-    initCarousel('events-grid', 'eventos-dots');
-    revealSection('eventos');
     await loadSection('testimonios', 'sections/testimonios.html');
     await populateTestimonials();
     initCarousel('testimonials-grid', 'testimonials-dots');
