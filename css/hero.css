@@ -10,6 +10,13 @@
   overflow: hidden;
 }
 
+@media (max-width: 639px) {
+  .hero {
+    min-height: 60vh;
+    padding: var(--space-12) var(--section-padding-x);
+  }
+}
+
 @media (min-width: 1024px) {
   .hero {
     min-height: 100vh;
