@@ -134,3 +134,7 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.brochure-container {
+  margin-top: var(--space-16);
+}
