@@ -24,21 +24,12 @@
   letter-spacing: var(--tracking-wide);
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-12);
-}
-
-@media (min-width: 768px) {
-  .testimonials-grid {
+/* Desktop grid — applied via carousel-track on desktop */
+@media (min-width: 640px) {
+  .carousel-track {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-12);
   }
 }
 
@@ -149,15 +140,6 @@
     scroll-snap-align: start;
   }
 
-  .testimonials-grid {
-    display: none;
-  }
-}
-
-@media (min-width: 640px) {
-  .carousel-track {
-    display: none;
-  }
 }
 
 .carousel-dots {
