@@ -1,0 +1,60 @@
+{
+  "section": { "es": "Preguntas frecuentes", "en": null },
+  "intro": { "es": "Resolvemos las dudas más habituales. Si no encuentras lo que buscas, escríbenos sin compromiso.", "en": null },
+  "items": [
+    {
+      "id": "faq-01",
+      "question": { "es": "¿Cuándo debo contactar con vosotras?", "en": null },
+      "answer": { "es": "Puedes ponerte en contacto con nosotras en cualquier momento del embarazo, desde las primeras semanas hasta el final. Cuanto antes empecemos a conocernos, más tiempo tenemos para construir ese vínculo de confianza que hace la diferencia. Pero si llegas en la recta final, también estaremos aquí.", "en": null },
+      "placeholder": false
+    },
+    {
+      "id": "faq-02",
+      "question": { "es": "¿Cuánto cuesta el acompañamiento?", "en": null },
+      "answer": { "es": "__PLACEHOLDER__: precios pendientes de confirmar con las fundadoras. Contacta directamente para recibir información actualizada sobre tarifas.", "en": null },
+      "placeholder": true
+    },
+    {
+      "id": "faq-03",
+      "question": { "es": "¿Puedo usar vuestra atención y seguir yendo al médico o matrona del sistema público?", "en": null },
+      "answer": { "es": "Sí, absolutamente. Nuestro acompañamiento es complementario al sistema público, no lo sustituye. Muchas de las familias que atendemos combinan ambos. Nos coordinamos para que tengas lo mejor de cada modelo: la cobertura del sistema público y el tiempo, la continuidad y la cercanía que nosotras podemos ofrecerte.", "en": null },
+      "placeholder": false
+    },
+    {
+      "id": "faq-04",
+      "question": { "es": "¿Hacéis partos en casa?", "en": null },
+      "answer": { "es": "Sí. El parto en casa es una de nuestras especialidades. Lo entendemos como una opción legítima y segura para embarazos de bajo riesgo, y lo atendemos con los mismos protocolos de seguridad que cualquier otro parto. Durante la primera consulta valoramos si es la opción adecuada para tu situación.", "en": null },
+      "placeholder": false
+    },
+    {
+      "id": "faq-05",
+      "question": { "es": "¿A qué zona geográfica llegáis?", "en": null },
+      "answer": { "es": "__PLACEHOLDER__: zona de cobertura pendiente de confirmar con las fundadoras.", "en": null },
+      "placeholder": true
+    },
+    {
+      "id": "faq-06",
+      "question": { "es": "¿Ofrecéis atención en inglés?", "en": null },
+      "answer": { "es": "Sí. Isabel se formó en el Reino Unido y atiende con fluidez en inglés. Si eres extranjera o prefieres comunicarte en inglés, puedes hacerlo sin ningún problema.", "en": null },
+      "placeholder": false
+    },
+    {
+      "id": "faq-07",
+      "question": { "es": "¿Qué pasa si surge una complicación o necesito ir al hospital?", "en": null },
+      "answer": { "es": "La seguridad es siempre la prioridad. Contamos con protocolos claros de derivación para cualquier situación que requiera atención hospitalaria. Si en algún momento del embarazo, el parto o el posparto detectamos que lo más adecuado es trasladarte a un centro, actuamos de inmediato y te acompañamos durante ese proceso.", "en": null },
+      "placeholder": false
+    },
+    {
+      "id": "faq-08",
+      "question": { "es": "¿Qué incluye el acompañamiento al parto?", "en": null },
+      "answer": { "es": "Estar a tu lado desde el inicio del trabajo de parto hasta después del nacimiento. Eso incluye apoyo emocional y físico, seguimiento del bienestar de madre y bebé, atención al parto en sí y los primeros momentos contigo y tu familia. En el parto en casa también aportamos el material clínico necesario.", "en": null },
+      "placeholder": false
+    },
+    {
+      "id": "faq-09",
+      "question": { "es": "¿Cómo es el primer contacto con vosotras?", "en": null },
+      "answer": { "es": "Puedes escribirnos por WhatsApp, email o Instagram. La primera conversación es sin compromiso: nos cuéntás dónde estás, qué necesitas y resolvemos tus dudas. Si encajamos, organizamos una primera visita para conocernos mejor.", "en": null },
+      "placeholder": false
+    }
+  ]
+}

@@ -12,6 +12,8 @@
 @import './testimonials.css';
 @import './brochure.css';
 @import './contact.css';
+@import './how-we-work.css';
+@import './faq.css';
 
 html {
   scroll-behavior: smooth;

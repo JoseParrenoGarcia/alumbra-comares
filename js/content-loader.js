@@ -147,6 +147,52 @@ async function populateContact() {
   });
 }
 
+async function populateHowWeWork() {
+  const data = await loadJSON('content/how-we-work.json');
+
+  document.getElementById('hww-heading').textContent = data.section.es;
+  document.getElementById('hww-intro').textContent = data.intro.es;
+
+  const grid = document.getElementById('hww-grid');
+  data.blocks.forEach((block, i) => {
+    const el = document.createElement('div');
+    el.className = 'hww-block reveal';
+    el.style.transitionDelay = `${i * 80}ms`;
+
+    const bodyClass = block.placeholder ? 'hww-block__body placeholder' : 'hww-block__body';
+
+    el.innerHTML = `
+      <h3 class="hww-block__title">${block.title.es}</h3>
+      <p class="${bodyClass}">${block.body.es}</p>
+    `;
+    grid.appendChild(el);
+  });
+}
+
+async function populateFaq() {
+  const data = await loadJSON('content/faq.json');
+
+  document.getElementById('faq-heading').textContent = data.section.es;
+  document.getElementById('faq-intro').textContent = data.intro.es;
+
+  const list = document.getElementById('faq-list');
+  data.items.forEach((item) => {
+    const details = document.createElement('details');
+    details.className = 'faq-item';
+
+    const answerClass = item.placeholder ? 'faq-answer placeholder' : 'faq-answer';
+
+    details.innerHTML = `
+      <summary class="faq-question">
+        <span>${item.question.es}</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <p class="${answerClass}">${item.answer.es}</p>
+    `;
+    list.appendChild(details);
+  });
+}
+
 function channelIcon(type) {
   const icons = { email: '✉️', phone: '📞', instagram: '📸', whatsapp: '💬' };
   return icons[type] || '→';
@@ -167,6 +213,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadSection('servicios', 'sections/servicios.html');
   await populateServices();
   revealSection('servicios');
+  await loadSection('como-trabajamos', 'sections/como-trabajamos.html');
+  await populateHowWeWork();
+  revealSection('como-trabajamos');
+  await loadSection('faq', 'sections/faq.html');
+  await populateFaq();
+  revealSection('faq');
   await loadSection('eventos', 'sections/eventos.html');
   await populateEvents();
   revealSection('eventos');
