@@ -1,0 +1,126 @@
+{
+  "section": {
+    "es": "Recursos Recomendados",
+    "en": null
+  },
+  "intro": {
+    "es": "Una selección cuidada de libros, asociaciones y espacios que consideramos valiosos para el camino de la maternidad consciente y informada.",
+    "en": null
+  },
+  "items": [
+    {
+      "id": "res-01",
+      "category": {
+        "es": "Libros",
+        "en": null
+      },
+      "title": {
+        "es": "El Parto es Nuestro",
+        "en": null
+      },
+      "type": "book",
+      "description": {
+        "es": "Guía práctica y empoderada sobre los derechos de las mujeres durante el embarazo y parto.",
+        "en": null
+      },
+      "author": "El Parto es Nuestro",
+      "link": "__PLACEHOLDER__",
+      "placeholder": true
+    },
+    {
+      "id": "res-02",
+      "category": {
+        "es": "Libros",
+        "en": null
+      },
+      "title": {
+        "es": "Cuerpo de Mujer, Sabiduría de Mujer",
+        "en": null
+      },
+      "type": "book",
+      "description": {
+        "es": "Obra de referencia sobre el ciclo reproductivo femenino y la salud integral de la mujer.",
+        "en": null
+      },
+      "author": "Christiane Northrup",
+      "link": "__PLACEHOLDER__",
+      "placeholder": true
+    },
+    {
+      "id": "res-03",
+      "category": {
+        "es": "Asociaciones",
+        "en": null
+      },
+      "title": {
+        "es": "La Asociación Española de Matronas",
+        "en": null
+      },
+      "type": "association",
+      "description": {
+        "es": "Organismo oficial que agrupa a profesionales matronas y promueve la calidad y la ética en la práctica.",
+        "en": null
+      },
+      "author": "AEM",
+      "link": "__PLACEHOLDER__",
+      "placeholder": true
+    },
+    {
+      "id": "res-04",
+      "category": {
+        "es": "Asociaciones",
+        "en": null
+      },
+      "title": {
+        "es": "Parto Respetado España",
+        "en": null
+      },
+      "type": "association",
+      "description": {
+        "es": "Red de profesionales y familias dedicadas a defender el parto fisiológico y los derechos de la madre.",
+        "en": null
+      },
+      "author": "Parto Respetado",
+      "link": "__PLACEHOLDER__",
+      "placeholder": true
+    },
+    {
+      "id": "res-05",
+      "category": {
+        "es": "Podcasts",
+        "en": null
+      },
+      "title": {
+        "es": "El Maravilloso Mundo de la Maternidad",
+        "en": null
+      },
+      "type": "podcast",
+      "description": {
+        "es": "Espacio de conversación sobre maternidad consciente, parto y puerperio desde perspectivas amorosas y realistas.",
+        "en": null
+      },
+      "author": "__PLACEHOLDER__",
+      "link": "__PLACEHOLDER__",
+      "placeholder": true
+    },
+    {
+      "id": "res-06",
+      "category": {
+        "es": "Recursos Online",
+        "en": null
+      },
+      "title": {
+        "es": "Cochrane Pregnancy and Childbirth",
+        "en": null
+      },
+      "type": "online",
+      "description": {
+        "es": "Base de datos con revisiones sistemáticas sobre evidencia científica en embarazo y parto.",
+        "en": null
+      },
+      "author": "Cochrane",
+      "link": "__PLACEHOLDER__",
+      "placeholder": true
+    }
+  ]
+}

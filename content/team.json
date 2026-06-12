@@ -22,7 +22,30 @@
         "en": null,
         "ca": null
       },
-      "image": "__PLACEHOLDER__: foto-isabel.jpg"
+      "image": "__PLACEHOLDER__: foto-isabel.jpg",
+      "registration": {
+        "es": "__PLACEHOLDER__",
+        "en": null,
+        "placeholder": true
+      },
+      "insurance": {
+        "es": "__PLACEHOLDER__",
+        "en": null,
+        "placeholder": true
+      },
+      "languages": ["Español", "__PLACEHOLDER__"],
+      "credentials": [
+        {
+          "title": { "es": "__PLACEHOLDER__", "en": null },
+          "placeholder": true
+        }
+      ],
+      "training": [
+        {
+          "title": { "es": "__PLACEHOLDER__", "en": null },
+          "placeholder": true
+        }
+      ]
     },
     {
       "name": "Alicia",
@@ -41,7 +64,30 @@
         "en": null,
         "ca": null
       },
-      "image": "__PLACEHOLDER__: foto-alicia.jpg"
+      "image": "__PLACEHOLDER__: foto-alicia.jpg",
+      "registration": {
+        "es": "__PLACEHOLDER__",
+        "en": null,
+        "placeholder": true
+      },
+      "insurance": {
+        "es": "__PLACEHOLDER__",
+        "en": null,
+        "placeholder": true
+      },
+      "languages": ["Español", "__PLACEHOLDER__"],
+      "credentials": [
+        {
+          "title": { "es": "__PLACEHOLDER__", "en": null },
+          "placeholder": true
+        }
+      ],
+      "training": [
+        {
+          "title": { "es": "__PLACEHOLDER__", "en": null },
+          "placeholder": true
+        }
+      ]
     },
     {
       "name": "Leticia",
@@ -60,7 +106,30 @@
         "en": null,
         "ca": null
       },
-      "image": "__PLACEHOLDER__: foto-leticia.jpg"
+      "image": "__PLACEHOLDER__: foto-leticia.jpg",
+      "registration": {
+        "es": "__PLACEHOLDER__",
+        "en": null,
+        "placeholder": true
+      },
+      "insurance": {
+        "es": "__PLACEHOLDER__",
+        "en": null,
+        "placeholder": true
+      },
+      "languages": ["Español", "__PLACEHOLDER__"],
+      "credentials": [
+        {
+          "title": { "es": "__PLACEHOLDER__", "en": null },
+          "placeholder": true
+        }
+      ],
+      "training": [
+        {
+          "title": { "es": "__PLACEHOLDER__", "en": null },
+          "placeholder": true
+        }
+      ]
     }
   ]
 }
