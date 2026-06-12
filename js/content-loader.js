@@ -513,7 +513,14 @@ function populatePageLinks() {
         <span class="page-link-card__cta">Ver formación →</span>
       </a>
     </div>
-    <div class="page-links-group page-links-group--secondary">
+  `;
+}
+
+function populatePageLinksSecondary() {
+  const section = document.getElementById('page-links-secondary');
+  if (!section) return;
+  section.innerHTML = `
+    <div class="page-links-group">
       <a href="/faq.html" class="page-link-card reveal">
         <div class="page-link-card__icon" aria-hidden="true">💬</div>
         <h3 class="page-link-card__title">¿Tienes más preguntas?</h3>
@@ -597,6 +604,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     await populateTestimonials();
     initCarousel('testimonials-grid', 'testimonials-dots');
     revealSection('testimonios');
+    populatePageLinksSecondary();
+    revealSection('page-links-secondary');
     await loadSection('contacto', 'sections/contacto.html');
     await populateContact();
     revealSection('contacto');
