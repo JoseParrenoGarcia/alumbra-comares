@@ -25,7 +25,7 @@ navOverlayClose.addEventListener('click', () => {
 });
 
 // Close menu when a link is clicked
-navOverlayLinks.forEach(link => {
+document.querySelectorAll('.nav-overlay a').forEach(link => {
   link.addEventListener('click', () => {
     navOverlay.classList.remove('open');
   });

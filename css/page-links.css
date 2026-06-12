@@ -11,7 +11,7 @@
   }
 }
 
-.page-links-container {
+.page-links-group {
   max-width: 800px;
   margin: 0 auto;
   display: grid;
@@ -20,7 +20,7 @@
 }
 
 @media (max-width: 639px) {
-  .page-links-container {
+  .page-links-group {
     grid-template-columns: 1fr;
     gap: var(--space-6);
   }

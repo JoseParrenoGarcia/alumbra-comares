@@ -11,13 +11,30 @@
   <nav class="nav">
     <a href="#hero" class="nav-logo">Alumbra Comares</a>
     <ul class="nav-links">
-      <li><a href="/#quienes-somos">Quiénes Somos</a></li>
-      <li><a href="/#por-que">Por Qué</a></li>
-      <li><a href="/#equipo">Equipo</a></li>
-      <li><a href="/#servicios">Servicios</a></li>
-      <li><a href="/como-trabajamos.html">Cómo Trabajamos</a></li>
-      <li><a href="/faq.html">FAQ</a></li>
-      <li><a href="/#recursos">Recursos</a></li>
+      <li class="nav-item">
+        <a href="/#quienes-somos">Nosotras</a>
+        <ul class="nav-dropdown">
+          <li><a href="/#quienes-somos">Quiénes Somos</a></li>
+          <li><a href="/#por-que">Por Qué</a></li>
+          <li><a href="/#equipo">Equipo</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="/#servicios">Servicios</a>
+        <ul class="nav-dropdown">
+          <li><a href="/#servicios">Servicios</a></li>
+          <li><a href="/como-trabajamos.html">Cómo Trabajamos</a></li>
+          <li><a href="/formacion.html">Formación</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="/faq.html">Información</a>
+        <ul class="nav-dropdown">
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/recursos.html">Recursos</a></li>
+          <li><a href="/eventos.html">Eventos</a></li>
+        </ul>
+      </li>
       <li><a href="/#contacto">Contacto</a></li>
     </ul>
     <div class="nav-lang">
@@ -30,13 +47,24 @@
     <nav class="nav-overlay">
       <button class="nav-overlay-close" aria-label="Cerrar menú">✕</button>
       <ul class="nav-overlay-links">
-        <li><a href="/#quienes-somos">Quiénes Somos</a></li>
-        <li><a href="/#por-que">Por Qué</a></li>
-        <li><a href="/#equipo">Equipo</a></li>
-        <li><a href="/#servicios">Servicios</a></li>
-        <li><a href="/como-trabajamos.html">Cómo Trabajamos</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
-        <li><a href="/#recursos">Recursos</a></li>
+        <li class="nav-overlay-group">
+          <span class="nav-overlay-group-label">Nosotras</span>
+          <a href="/#quienes-somos">Quiénes Somos</a>
+          <a href="/#por-que">Por Qué</a>
+          <a href="/#equipo">Equipo</a>
+        </li>
+        <li class="nav-overlay-group">
+          <span class="nav-overlay-group-label">Servicios</span>
+          <a href="/#servicios">Servicios</a>
+          <a href="/como-trabajamos.html">Cómo Trabajamos</a>
+          <a href="/formacion.html">Formación</a>
+        </li>
+        <li class="nav-overlay-group">
+          <span class="nav-overlay-group-label">Información</span>
+          <a href="/faq.html">FAQ</a>
+          <a href="/recursos.html">Recursos</a>
+          <a href="/eventos.html">Eventos</a>
+        </li>
         <li><a href="/#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -62,17 +90,13 @@
 
   <section id="equipo"></section>
 
-  <section id="formacion"></section>
-
   <section id="servicios"></section>
 
   <section id="page-links" class="page-links-section"></section>
 
-  <section id="eventos"></section>
-
   <section id="testimonios" class="section-wrapper"></section>
 
-  <section id="recursos" class="section-wrapper"></section>
+  <section id="page-links-secondary" class="page-links-section"></section>
 
   <section id="contacto"></section>
 
