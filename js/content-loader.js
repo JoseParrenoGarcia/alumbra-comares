@@ -309,12 +309,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   revealSection('faq');
   await loadSection('eventos', 'sections/eventos.html');
   await populateEvents();
+  initCarousel('events-grid', 'eventos-dots');
   revealSection('eventos');
   await loadSection('testimonios', 'sections/testimonios.html');
   await populateTestimonials();
+  initCarousel('testimonials-grid', 'testimonials-dots');
   revealSection('testimonios');
   await loadSection('recursos', 'sections/recursos.html');
   await populateResources();
+  initCarousel('recursos-grid', 'recursos-dots');
   revealSection('recursos');
   await loadSection('contacto', 'sections/contacto.html');
   await populateContact();
