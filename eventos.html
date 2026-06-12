@@ -10,37 +10,30 @@
   <meta property="og:url" content="https://alumbracomares.es/eventos.html">
   <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/events.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-container">
-      <a href="/" class="navbar-logo">Alumbra Comares</a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="/#quienes-somos">Quiénes Somos</a></li>
-        <li><a href="/#por-que">Por Qué</a></li>
-        <li><a href="/#equipo">Equipo</a></li>
-        <li><a href="/#servicios">Servicios</a></li>
-        <li><a href="/como-trabajamos.html">Cómo Trabajamos</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
-        <li><a href="/recursos.html">Recursos</a></li>
-        <li><a href="/#contacto">Contacto</a></li>
-      </ul>
-      <div class="nav-lang">
-        <select class="lang-select" aria-label="Idioma">
-          <option value="es" selected>🇪🇸 ES</option>
-          <option value="en">🇬🇧 EN</option>
-        </select>
-      </div>
-      <button class="nav-overlay-close" id="nav-overlay-close" aria-label="Close navigation menu">✕</button>
+  <nav class="nav">
+    <a href="/" class="nav-logo">Alumbra Comares</a>
+    <ul class="nav-links">
+      <li><a href="/#quienes-somos">Quiénes Somos</a></li>
+      <li><a href="/#por-que">Por Qué</a></li>
+      <li><a href="/#equipo">Equipo</a></li>
+      <li><a href="/#servicios">Servicios</a></li>
+      <li><a href="/como-trabajamos.html">Cómo Trabajamos</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="/recursos.html">Recursos</a></li>
+      <li><a href="/#contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-lang">
+      <select class="lang-select" aria-label="Idioma">
+        <option value="es" selected>🇪🇸 ES</option>
+        <option value="en">🇬🇧 EN</option>
+      </select>
     </div>
-    <nav class="nav-overlay" id="nav-overlay">
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    <nav class="nav-overlay">
+      <button class="nav-overlay-close" aria-label="Cerrar menú">✕</button>
       <ul class="nav-overlay-links">
         <li><a href="/#quienes-somos">Quiénes Somos</a></li>
         <li><a href="/#por-que">Por Qué</a></li>
@@ -58,15 +51,7 @@
     <div class="eventos-page-container">
       <h1 id="eventos-page-heading"></h1>
       <p id="eventos-page-intro"></p>
-      <div class="eventos-page-grid" id="eventos-page-grid"></div>
-    </div>
-  </section>
-
-  <section id="eventos-cta" class="eventos-cta-section">
-    <div class="eventos-cta-container">
-      <h2>¿Tienes más preguntas?</h2>
-      <p>Estamos aquí para ayudarte. Ponte en contacto con nosotras sin compromiso.</p>
-      <a href="/#contacto" class="btn btn-primary">Contáctanos</a>
+      <div class="events-grid" id="eventos-page-grid"></div>
     </div>
   </section>
 
@@ -76,20 +61,18 @@
       <p class="footer-tagline">Acompañamiento integral en embarazo, parto y maternidad desde la calma, el respeto y la evidencia científica</p>
     </div>
     <div class="footer-links">
-      <a href="/" class="footer-link">Inicio</a>
-      <a href="/#quienes-somos" class="footer-link">Quiénes somos</a>
-      <a href="/#servicios" class="footer-link">Servicios</a>
-      <a href="/como-trabajamos.html" class="footer-link">Cómo trabajamos</a>
-      <a href="/faq.html" class="footer-link">FAQ</a>
-      <a href="/recursos.html" class="footer-link">Recursos</a>
-      <a href="/#contacto" class="footer-link">Contacto</a>
+      <a href="/privacidad.html" class="footer-link">Privacidad</a>
+      <a href="/cookies.html" class="footer-link">Cookies</a>
+      <a href="mailto:alumbracomares@outlook.com" class="footer-link">Email</a>
+      <a href="https://instagram.com/alumbracomares" class="footer-link">Instagram</a>
     </div>
-    <div class="footer-copyright">
-      <p>&copy; 2025 Alumbra Comares. Todos los derechos reservados.</p>
-    </div>
+    <p class="footer-copyright">© 2024 Alumbra Comares</p>
   </footer>
 
-  <script src="js/nav.js"></script>
-  <script src="js/content-loader.js"></script>
+  <script src="js/reveal.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/carousel.js" defer></script>
+  <script src="js/content-loader.js" defer></script>
+  <script src="js/contact.js" defer></script>
 </body>
 </html>

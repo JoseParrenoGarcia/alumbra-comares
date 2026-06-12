@@ -498,6 +498,8 @@ async function populateFormacionPage() {
 async function populateEventosPage() {
   const data = await loadJSON('content/events.json');
   document.getElementById('eventos-page-heading').textContent = data.heading.es;
+  const introEl = document.getElementById('eventos-page-intro');
+  if (introEl && data.intro?.es) introEl.textContent = data.intro.es;
 
   const grid = document.getElementById('eventos-page-grid');
   if (!data.items || data.items.length === 0) {

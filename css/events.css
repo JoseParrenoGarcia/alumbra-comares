@@ -1,6 +1,29 @@
-#eventos {
+#eventos,
+.eventos-page-section {
   background-color: var(--color-bg-wash);
   padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.eventos-page-container {
+  max-width: var(--content-max-width, 1200px);
+  margin: 0 auto;
+}
+
+.eventos-page-container h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--color-terracotta);
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+.eventos-page-container > p {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--text-md);
+  max-width: 600px;
+  margin: 0 auto var(--space-12);
 }
 
 @media (max-width: 639px) {
