@@ -49,6 +49,14 @@ async function populateServices() {
       priceEl.textContent = `${item.price.amount} ${item.price.currency}`;
     }
   });
+
+  const grid = document.querySelector('#servicios .services-grid');
+  if (grid) {
+    const linkContainer = document.createElement('div');
+    linkContainer.className = 'services-all-link';
+    linkContainer.innerHTML = `<a href="/servicios.html" class="btn btn-secondary">Ver todos los servicios →</a>`;
+    grid.parentNode.insertBefore(linkContainer, grid.nextSibling);
+  }
 }
 
 async function populateEvents() {
@@ -586,12 +594,6 @@ function populatePageLinks() {
   if (!section) return;
   section.innerHTML = `
     <div class="page-links-group">
-      <a href="/servicios.html" class="page-link-card reveal">
-        <div class="page-link-card__icon" aria-hidden="true">🌿</div>
-        <h3 class="page-link-card__title">Nuestros servicios</h3>
-        <p class="page-link-card__desc">Seguimiento de embarazo, atención al parto, posparto, lactancia y más.</p>
-        <span class="page-link-card__cta">Ver todos los servicios →</span>
-      </a>
       <a href="/como-trabajamos.html" class="page-link-card reveal">
         <div class="page-link-card__icon" aria-hidden="true">🤝</div>
         <h3 class="page-link-card__title">¿Quieres saber cómo trabajamos?</h3>
@@ -705,6 +707,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadSection('equipo', 'sections/equipo.html');
     await populateTeam();
     revealSection('equipo');
+    await loadSection('servicios', 'sections/servicios.html');
+    await populateServices();
+    revealSection('servicios');
     populatePageLinks();
     revealSection('page-links');
     await loadSection('testimonios', 'sections/testimonios.html');
