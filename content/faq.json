@@ -41,7 +41,7 @@
     {
       "id": "faq-07",
       "question": { "es": "¿Qué pasa si surge una complicación o necesito ir al hospital?", "en": null },
-      "answer": { "es": "La seguridad es siempre la prioridad. Contamos con protocolos claros de derivación para cualquier situación que requiera atención hospitalaria. Si en algún momento del embarazo, el parto o el posparto detectamos que lo más adecuado es trasladarte a un centro, actuamos de inmediato y te acompañamos durante ese proceso.", "en": null },
+      "answer": { "es": "La seguridad es siempre la prioridad. Contamos con protocolos claros de derivación para cualquier situación que requiera atención hospitalaria. Si en algún momento del embarazo, el parto o el posparto detectamos que lo más adecuado es trasladarte a un centro, actuamos de inmediato y te acompañamos durante ese proceso. Lee más en <a href=\"/como-trabajamos.html\">Cómo Trabajamos</a> en la sección sobre seguridad y derivaciones.", "en": null },
       "placeholder": false
     },
     {

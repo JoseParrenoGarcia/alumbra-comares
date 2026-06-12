@@ -154,7 +154,8 @@ async function populateHowWeWork() {
   document.getElementById('hww-intro').textContent = data.intro.es;
 
   const grid = document.getElementById('hww-grid');
-  data.blocks.forEach((block, i) => {
+  const summaryItems = data.blocks.slice(0, 3);
+  summaryItems.forEach((block, i) => {
     const el = document.createElement('div');
     el.className = 'hww-block reveal';
     el.style.transitionDelay = `${i * 80}ms`;
@@ -167,6 +168,43 @@ async function populateHowWeWork() {
     `;
     grid.appendChild(el);
   });
+
+  // Add "leer más" link on homepage
+  if (isHomepage()) {
+    const linkContainer = document.createElement('div');
+    linkContainer.className = 'hww-summary-link';
+    linkContainer.innerHTML = `<a href="/como-trabajamos.html" class="hww-all-link">Leer más →</a>`;
+    grid.parentNode.insertBefore(linkContainer, grid.nextSibling);
+  }
+}
+
+function getFriendlyPlaceholder() {
+  return 'Información disponible próximamente — contacta para más detalles';
+}
+
+async function populateHowWeWorkPage() {
+  const data = await loadJSON('content/how-we-work.json');
+
+  document.getElementById('hww-page-heading').textContent = data.section.es;
+  document.getElementById('hww-page-intro').textContent = data.intro.es;
+
+  const grid = document.getElementById('hww-page-grid');
+  data.blocks.forEach((block, i) => {
+    const el = document.createElement('div');
+    el.className = 'hww-block reveal';
+    el.style.transitionDelay = `${i * 80}ms`;
+
+    const bodyClass = block.placeholder ? 'hww-block__body placeholder' : 'hww-block__body';
+    const bodyText = block.placeholder && block.body.es.includes('__PLACEHOLDER__')
+      ? getFriendlyPlaceholder()
+      : block.body.es;
+
+    el.innerHTML = `
+      <h3 class="hww-block__title">${block.title.es}</h3>
+      <p class="${bodyClass}">${bodyText}</p>
+    `;
+    grid.appendChild(el);
+  });
 }
 
 function getFriendlyAnswer(item) {
@@ -174,6 +212,14 @@ function getFriendlyAnswer(item) {
     return 'Contacta directamente para información actualizada';
   }
   return item.answer.es;
+}
+
+function renderFriendlyAnswer(item) {
+  const answerEl = document.createElement('p');
+  const answerClass = item.placeholder ? 'faq-answer placeholder' : 'faq-answer';
+  answerEl.className = answerClass;
+  answerEl.innerHTML = getFriendlyAnswer(item);
+  return answerEl;
 }
 
 async function populateFaq() {
@@ -187,16 +233,14 @@ async function populateFaq() {
     const details = document.createElement('details');
     details.className = 'faq-item';
 
-    const answerClass = item.placeholder ? 'faq-answer placeholder' : 'faq-answer';
-    const answerText = getFriendlyAnswer(item);
+    const summary = document.createElement('summary');
+    summary.className = 'faq-question';
+    summary.innerHTML = `<span>${item.question.es}</span><span class="faq-icon" aria-hidden="true">+</span>`;
 
-    details.innerHTML = `
-      <summary class="faq-question">
-        <span>${item.question.es}</span>
-        <span class="faq-icon" aria-hidden="true">+</span>
-      </summary>
-      <p class="${answerClass}">${answerText}</p>
-    `;
+    const answerEl = renderFriendlyAnswer(item);
+
+    details.appendChild(summary);
+    details.appendChild(answerEl);
     list.appendChild(details);
   });
 }
@@ -212,16 +256,14 @@ async function populateFaqPage() {
     const details = document.createElement('details');
     details.className = 'faq-item';
 
-    const answerClass = item.placeholder ? 'faq-answer placeholder' : 'faq-answer';
-    const answerText = getFriendlyAnswer(item);
+    const summary = document.createElement('summary');
+    summary.className = 'faq-question';
+    summary.innerHTML = `<span>${item.question.es}</span><span class="faq-icon" aria-hidden="true">+</span>`;
 
-    details.innerHTML = `
-      <summary class="faq-question">
-        <span>${item.question.es}</span>
-        <span class="faq-icon" aria-hidden="true">+</span>
-      </summary>
-      <p class="${answerClass}">${answerText}</p>
-    `;
+    const answerEl = renderFriendlyAnswer(item);
+
+    details.appendChild(summary);
+    details.appendChild(answerEl);
     list.appendChild(details);
   });
 
@@ -254,16 +296,14 @@ async function populateFaqSummary() {
     const details = document.createElement('details');
     details.className = 'faq-item';
 
-    const answerClass = item.placeholder ? 'faq-answer placeholder' : 'faq-answer';
-    const answerText = getFriendlyAnswer(item);
+    const summary = document.createElement('summary');
+    summary.className = 'faq-question';
+    summary.innerHTML = `<span>${item.question.es}</span><span class="faq-icon" aria-hidden="true">+</span>`;
 
-    details.innerHTML = `
-      <summary class="faq-question">
-        <span>${item.question.es}</span>
-        <span class="faq-icon" aria-hidden="true">+</span>
-      </summary>
-      <p class="${answerClass}">${answerText}</p>
-    `;
+    const answerEl = renderFriendlyAnswer(item);
+
+    details.appendChild(summary);
+    details.appendChild(answerEl);
     list.appendChild(details);
   });
 
@@ -359,6 +399,27 @@ async function populateResources() {
   });
 }
 
+function populatePageLinks() {
+  const section = document.getElementById('page-links');
+  if (!section) return;
+  section.innerHTML = `
+    <div class="page-links-container">
+      <a href="/faq.html" class="page-link-card reveal">
+        <div class="page-link-card__icon" aria-hidden="true">💬</div>
+        <h3 class="page-link-card__title">¿Tienes más preguntas?</h3>
+        <p class="page-link-card__desc">Resolvemos tus dudas sobre servicios, precios, seguridad y logística.</p>
+        <span class="page-link-card__cta">Ver preguntas frecuentes →</span>
+      </a>
+      <a href="/como-trabajamos.html" class="page-link-card reveal">
+        <div class="page-link-card__icon" aria-hidden="true">🤝</div>
+        <h3 class="page-link-card__title">¿Quieres saber cómo trabajamos?</h3>
+        <p class="page-link-card__desc">Conoce nuestro modelo de atención compartida y cómo acompañamos cada etapa.</p>
+        <span class="page-link-card__cta">Ver cómo trabajamos →</span>
+      </a>
+    </div>
+  `;
+}
+
 function channelIcon(type) {
   const icons = { email: '✉️', phone: '📞', instagram: '📸', whatsapp: '💬' };
   return icons[type] || '→';
@@ -376,10 +437,18 @@ function isFaqPage() {
   return window.location.pathname === '/faq.html' || window.location.pathname.endsWith('/faq.html');
 }
 
+function isComoTrabajamosPage() {
+  return window.location.pathname === '/como-trabajamos.html' || window.location.pathname.endsWith('/como-trabajamos.html');
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   if (isFaqPage()) {
     // Full FAQ page
     await populateFaqPage();
+  } else if (isComoTrabajamosPage()) {
+    // Full How We Work page
+    await populateHowWeWorkPage();
+    revealSection('como-trabajamos');
   } else if (isHomepage()) {
     // Homepage: load all sections including FAQ summary
     await loadSection('quienes-somos', 'sections/quienes-somos.html');
@@ -395,12 +464,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadSection('servicios', 'sections/servicios.html');
     await populateServices();
     revealSection('servicios');
-    await loadSection('como-trabajamos', 'sections/como-trabajamos.html');
-    await populateHowWeWork();
-    revealSection('como-trabajamos');
-    await loadSection('faq', 'sections/faq.html');
-    await populateFaqSummary();
-    revealSection('faq');
+    populatePageLinks();
+    revealSection('page-links');
     await loadSection('eventos', 'sections/eventos.html');
     await populateEvents();
     initCarousel('events-grid', 'eventos-dots');
