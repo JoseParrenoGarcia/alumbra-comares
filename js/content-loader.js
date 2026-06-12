@@ -193,6 +193,91 @@ async function populateFaq() {
   });
 }
 
+async function populateFormacion() {
+  const data = await loadJSON('content/education.json');
+  const teamData = await loadJSON('content/team.json');
+
+  document.getElementById('formacion-section-title').textContent = data.section.es;
+  document.getElementById('formacion-intro').textContent = data.intro.es;
+
+  const container = document.getElementById('formacion-members');
+  teamData.members.forEach((member, i) => {
+    const card = document.createElement('div');
+    card.className = 'formacion-member reveal';
+    card.style.transitionDelay = `${i * 80}ms`;
+
+    let languagesHtml = '';
+    if (member.languages) {
+      const langItems = member.languages.map(lang => {
+        const isPlaceholder = lang.startsWith('__PLACEHOLDER__');
+        const langClass = isPlaceholder ? 'formacion-member__languages placeholder' : 'formacion-member__languages';
+        return `<div class="${langClass}">${lang}</div>`;
+      }).join('');
+      languagesHtml = `<div class="formacion-member__section"><div class="formacion-member__section-title">Idiomas</div>${langItems}</div>`;
+    }
+
+    let credentialsHtml = '';
+    if (member.credentials && member.credentials.length > 0) {
+      const credItems = member.credentials.map(cred => {
+        const isPlaceholder = cred.placeholder || cred.title.es.startsWith('__PLACEHOLDER__');
+        const credClass = isPlaceholder ? 'formacion-member__item placeholder' : 'formacion-member__item';
+        return `<div class="${credClass}">${cred.title.es}</div>`;
+      }).join('');
+      credentialsHtml = `<div class="formacion-member__section"><div class="formacion-member__section-title">Credenciales</div>${credItems}</div>`;
+    }
+
+    let trainingHtml = '';
+    if (member.training && member.training.length > 0) {
+      const trainItems = member.training.map(train => {
+        const isPlaceholder = train.placeholder || train.title.es.startsWith('__PLACEHOLDER__');
+        const trainClass = isPlaceholder ? 'formacion-member__item placeholder' : 'formacion-member__item';
+        return `<div class="${trainClass}">${train.title.es}</div>`;
+      }).join('');
+      trainingHtml = `<div class="formacion-member__section"><div class="formacion-member__section-title">Formación</div>${trainItems}</div>`;
+    }
+
+    card.innerHTML = `
+      <div class="formacion-member__name">${member.name}</div>
+      <div class="formacion-member__credentials">${member.role.es}</div>
+      ${languagesHtml}
+      ${credentialsHtml}
+      ${trainingHtml}
+    `;
+    container.appendChild(card);
+  });
+}
+
+async function populateResources() {
+  const data = await loadJSON('content/resources.json');
+
+  document.getElementById('recursos-section-title').textContent = data.section.es;
+  document.getElementById('recursos-intro').textContent = data.intro.es;
+
+  const grid = document.getElementById('recursos-grid');
+  data.items.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'recurso-card reveal';
+    card.style.transitionDelay = `${i * 80}ms`;
+
+    const isPlaceholderLink = item.placeholder || item.link === '__PLACEHOLDER__';
+    const linkClass = isPlaceholderLink ? 'recurso-card__link placeholder' : 'recurso-card__link';
+    const linkHref = isPlaceholderLink ? '#' : item.link;
+    const linkTarget = isPlaceholderLink ? '' : ' target="_blank" rel="noopener"';
+    const linkText = isPlaceholderLink ? 'Enlace próximamente' : 'Ver recurso';
+
+    card.innerHTML = `
+      <div class="recurso-card__category">${item.category.es}</div>
+      <div class="recurso-card__title">${item.title.es}</div>
+      <p class="recurso-card__description">${item.description.es}</p>
+      <div class="recurso-card__meta">
+        <span class="recurso-card__author">${item.author}</span>
+      </div>
+      <a href="${linkHref}" class="${linkClass}"${linkTarget}>${linkText}</a>
+    `;
+    grid.appendChild(card);
+  });
+}
+
 function channelIcon(type) {
   const icons = { email: '✉️', phone: '📞', instagram: '📸', whatsapp: '💬' };
   return icons[type] || '→';
@@ -210,6 +295,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadSection('equipo', 'sections/equipo.html');
   await populateTeam();
   revealSection('equipo');
+  await loadSection('formacion', 'sections/formacion.html');
+  await populateFormacion();
+  revealSection('formacion');
   await loadSection('servicios', 'sections/servicios.html');
   await populateServices();
   revealSection('servicios');
@@ -226,6 +314,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   await populateTestimonials();
   revealSection('testimonios');
   await loadSection('recursos', 'sections/recursos.html');
+  await populateResources();
   revealSection('recursos');
   await loadSection('contacto', 'sections/contacto.html');
   await populateContact();
