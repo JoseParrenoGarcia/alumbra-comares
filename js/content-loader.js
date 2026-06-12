@@ -464,9 +464,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadSection('servicios', 'sections/servicios.html');
     await populateServices();
     revealSection('servicios');
-    await loadSection('como-trabajamos', 'sections/como-trabajamos.html');
-    await populateHowWeWork();
-    revealSection('como-trabajamos');
     populatePageLinks();
     revealSection('page-links');
     await loadSection('eventos', 'sections/eventos.html');
