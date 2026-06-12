@@ -19,15 +19,20 @@
 | [M13](milestones/m13.md) | External website benchmark audit | complete | Research pack + benchmark synthesis |
 | [M14](milestones/m14.md) | Persona audit framework | complete | Reusable personas + audit rubric |
 | [M14B](milestones/m14b.md) | Site scoring skill | planned | Executable skill that scores any site iteration against all 13 personas and canvas |
-| [M15](milestones/m15.md) | Services content review and rewrite | planned | Clearer service explanations in content JSON |
+| [M15](milestones/m15.md) | Services content review and rewrite | superseded | Folded into M17.3 — services rewrite and /servicios page split are one PR |
 | [M16](milestones/m16.md) | WhatsApp / Telegram feasibility review | planned | Contact-channel recommendation and implementation brief |
 | [M16A](milestones/m16a.md) | WhatsApp contact implementation | planned | Add WhatsApp CTA to contact section (depends on M16 approval) |
 | [M17A](milestones/m17a.md) | FAQ surface | complete | Anxiety-reducing FAQs for services, pricing, safety, and logistics |
 | [M17B](milestones/m17b.md) | How We Work / Safety page | complete | Eligibility, boundaries, transfers, and practical care model |
 | [M18](milestones/m18.md) | Education and credentials section | complete | Trust-building content block or page |
 | [M19](milestones/m19.md) | Resources library / blog | complete | Recommended materials section or page |
-| [M17](milestones/m17.md) | Information architecture audit | planned | Single-page vs multi-page recommendation — run after M17A, M17B, M18, M19 are in place |
-| [M20](milestones/m20.md) | SEO foundations and metadata system | planned | Metadata, keyword decisions, JSON-driven SEO fields |
+| [M17](milestones/m17.md) | Information architecture audit | complete | Hybrid IA decision — Option B, all founder questions resolved 2026-06-12 |
+| [M17.1](milestones/m17.1.md) | `/faq` standalone page | planned | Split FAQ to own page with FAQ schema; homepage keeps 5-item summary |
+| [M17.2](milestones/m17.2.md) | `/como-trabajamos` standalone page + nav switch | planned | Split How We Work/Safety; switch nav from anchors to page links (all at once) |
+| [M17.3](milestones/m17.3.md) | `/servicios` page + services content rewrite | planned | Services rewrite (M15 scope) + page split as one PR |
+| [M17.4](milestones/m17.4.md) | `/recursos` standalone page | planned | Split resources library; homepage keeps 3-item summary + brochure CTA |
+| [M17.5](milestones/m17.5.md) | `/formacion` standalone page | planned | Optional — split credentials page once real credentials are populated |
+| [M20](milestones/m20.md) | SEO foundations and metadata system | planned | Metadata, keyword decisions, JSON-driven SEO fields — depends on M17.1 landing first |
 | [M21](milestones/m21.md) | Content governance system | planned | Editorial rules, schemas, and change workflow |
 | [M22](milestones/m22.md) | Asset readiness and media audit | planned | Images, rights, alt text, compression, and social assets |
 | [M23](milestones/m23.md) | Cookie notice audit and rewrite | planned | Right-sized cookie language after deployment audit |
@@ -48,12 +53,13 @@ The backlog items have been converted into ordered milestones `M13` through `M31
 Ordering logic:
 
 - `M12` is complete, and several later audits depend on the live site now being available publicly.
-- `M13` to `M17` are discovery and product-shaping milestones. They help us decide messaging, contact channels, and whether the current single-page IA should remain in place before we add more content.
+- `M13` to `M17` are discovery and product-shaping milestones. They established messaging direction, persona framework, and the IA decision (M17 resolved: Option B hybrid).
 - `M17A` and `M17B` were added after the benchmark report because FAQ clarity and explicit safety boundaries emerged as core trust surfaces, not optional extras.
+- `M17.1` to `M17.5` are the phased IA migration implementing the hybrid structure decided in M17. Each splits one section to its own page: FAQ first (SEO leverage + content ready), Cómo Trabajamos second (trust signals + content ready from M17B), Servicios third (coupled with the M15 services rewrite so new content lands on the new page), Recursos fourth (unbounded growth surface), Formación optional when real credentials are populated.
 - `M18` to `M22` are content, asset, and findability groundwork built on top of those earlier decisions.
 - `M23` and `M24` revisit legal copy only after deployment and contact-channel choices are known.
-- `M25` and `M26` delay full translation rollout until content structure, SEO fields, assets, and legal wording are more stable.
-- `M27` and `M28` harden usability and routing once the site has likely grown beyond the original single-page shape.
+- `M25` and `M26` delay full translation rollout until content structure, SEO fields, assets, and legal wording are more stable. Translation is page-by-page under the hybrid structure.
+- `M27` and `M28` harden usability and routing — M28 (404 pages) is now more important given the multi-page structure.
 - `M29` to `M31` are technical hardening and architecture review after the product surface is more mature.
 
 Audit milestones are intentionally not Haiku-led by default. Where external research is needed, the milestone file includes a human-run prompt so results from ChatGPT, Claude, Grok, or another provider can be pasted back into the repo workflow.

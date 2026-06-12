@@ -166,20 +166,56 @@ They are not final approved source of truth.
 
 ## 10. Information Architecture
 
-### Recommended v0 Structure
+### Decision (M17 — resolved 2026-06-12)
 
-A `single-page` website with anchored sections.
+**Option B — Hybrid IA.** The site uses a curated landing homepage with summary blocks, and splits decision-heavy / trust-heavy content onto their own pages. Full audit and rationale: `docs/research/m17-ia-audit.md`.
 
-Reasoning:
+### Homepage
 
-- fastest path to a polished reviewable prototype
-- easier to browse on mobile
-- lower content overhead
-- simpler to host on GitHub Pages
+The homepage is a curated landing page. Each content area is represented as a short summary block with a "ver más" link to the detail page. What stays on the homepage permanently:
 
-### Alternative To Revisit Later
+- hero
+- quiénes somos (philosophy)
+- por qué Alumbra (3 pillars)
+- equipo (3 midwife profiles, full bios + quotes)
+- formación (credential summary as team-card badges — until `/formacion` splits)
+- servicios (top 3–4 service cards + "ver todos los servicios" link)
+- cómo trabajamos (top 3 blocks + "leer más" link)
+- FAQ (top 5 questions + "ver todas las preguntas" link)
+- eventos (full listing — stays on homepage, events are sporadic)
+- testimonios (full carousel)
+- recursos (top 3 items + "ver biblioteca completa" link + brochure download CTA)
+- contacto (full form + channels — primary conversion surface)
 
-A small multi-page static site if content volume grows or if services, safety guidance, FAQs, or resources need deeper separation.
+### Page map
+
+| URL | Primary content | Nav label |
+|-----|----------------|-----------|
+| `/` | Homepage with summary blocks | Inicio |
+| `/faq.html` | All FAQ items with FAQ schema (`@type: FAQPage`) | FAQ |
+| `/como-trabajamos.html` | Full How We Work / Safety — model, eligibility, transfer protocols, public system, first contact | Cómo Trabajamos |
+| `/servicios.html` | All services with extended descriptions, pricing direction, per-service anchors | Servicios |
+| `/recursos.html` | Full resources library with category grouping; future blog index | Recursos |
+| `/formacion.html` | Per-midwife credentials, registration numbers, training (optional — when real credentials are ready) | Formación |
+| `/privacidad.html` | Privacy policy | (footer only) |
+| `/cookies.html` | Cookie notice | (footer only) |
+
+Future expansion: `/blog/<slug>.html` when authored content starts; `/servicios/<slug>.html` if SEO research (M20) justifies per-service pages.
+
+### Navigation
+
+- **Top nav (sticky, desktop and mobile):** Inicio, Servicios, Cómo Trabajamos, FAQ, Recursos, Contacto
+- Nav switches from anchor links to page links **all at once** when M17.1 (`/faq`) and M17.2 (`/como-trabajamos`) both land
+- **Footer nav:** mirrors top nav + Formación (when split), Privacidad, Cookies, Instagram, Email
+- **Mobile:** persistent floating WhatsApp button once M16/M16A lands
+
+### Language URL structure
+
+Subfolder per language: `/` (Spanish default), `/en/` (M25), `/ca/` (M26). `hreflang` tags on each page. Translation is page-by-page — the site can have English `/servicios` while `/recursos` is still Spanish-only.
+
+### Placeholder policy
+
+Placeholder content (pricing, credentials, geographic coverage, event dates) is shown with honest user-friendly labels — e.g. "Precio a consultar — contacta para información actualizada". Raw `__PLACEHOLDER__` strings are never rendered to visitors.
 
 ## 11. Functional Requirements
 
@@ -361,7 +397,6 @@ Translation should be treated as a core content architecture requirement even if
 
 These should remain visible in future iterations:
 
-- final single-page vs multi-page decision
 - exact tone of the contact flow
 - approved service list
 - approved pricing
