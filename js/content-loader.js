@@ -528,11 +528,70 @@ async function populateEventosPage() {
   });
 }
 
+async function populateServiciosPage() {
+  const data = await loadJSON('content/services.json');
+
+  document.getElementById('servicios-page-heading').textContent = data.heading.es;
+  document.getElementById('servicios-page-intro').textContent = data.intro?.es || '';
+
+  const grid = document.getElementById('servicios-page-list');
+  data.items.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'servicios-page-card reveal';
+    card.id = item.anchor;
+    card.style.transitionDelay = `${i * 80}ms`;
+
+    const priceText = item.price?.placeholder
+      ? item.price.description
+      : `${item.price?.amount || '__PLACEHOLDER__'} ${item.price?.currency || 'EUR'}`;
+
+    card.innerHTML = `
+      <h2 class="servicios-page-card__title">${item.title.es}</h2>
+      <p class="servicios-page-card__description">${item.description.es}</p>
+      <div class="servicios-page-card__meta">
+        <p><strong>Para quién:</strong> ${item.for?.es || '__PLACEHOLDER__'}</p>
+        <p><strong>Qué incluye:</strong> ${item.includes?.es || '__PLACEHOLDER__'}</p>
+      </div>
+      <p class="servicios-page-card__price">${priceText}</p>
+      <a href="/#contacto" class="btn btn-primary servicios-page-card__cta">Solicitar información</a>
+    `;
+    grid.appendChild(card);
+  });
+
+  // Generate and inject JSON-LD Service schema
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Alumbra Comares",
+    "service": data.items.map(item => ({
+      "@type": "Service",
+      "name": item.title.es,
+      "description": item.description.es,
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Alumbra Comares"
+      },
+      "areaServed": "Valencia"
+    }))
+  };
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(jsonLd, null, 2);
+  document.head.appendChild(script);
+}
+
 function populatePageLinks() {
   const section = document.getElementById('page-links');
   if (!section) return;
   section.innerHTML = `
     <div class="page-links-group">
+      <a href="/servicios.html" class="page-link-card reveal">
+        <div class="page-link-card__icon" aria-hidden="true">🌿</div>
+        <h3 class="page-link-card__title">Nuestros servicios</h3>
+        <p class="page-link-card__desc">Seguimiento de embarazo, atención al parto, posparto, lactancia y más.</p>
+        <span class="page-link-card__cta">Ver todos los servicios →</span>
+      </a>
       <a href="/como-trabajamos.html" class="page-link-card reveal">
         <div class="page-link-card__icon" aria-hidden="true">🤝</div>
         <h3 class="page-link-card__title">¿Quieres saber cómo trabajamos?</h3>
@@ -609,6 +668,10 @@ function isEventosPage() {
   return window.location.pathname === '/eventos.html' || window.location.pathname.endsWith('/eventos.html');
 }
 
+function isServiciosPage() {
+  return window.location.pathname === '/servicios.html' || window.location.pathname.endsWith('/servicios.html');
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   if (isFaqPage()) {
     // Full FAQ page
@@ -629,6 +692,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Full Eventos page
     await populateEventosPage();
     revealSection('eventos-page');
+  } else if (isServiciosPage()) {
+    // Full Servicios page
+    await populateServiciosPage();
+    revealSection('servicios-page');
   } else if (isHomepage()) {
     // Homepage: load all sections including FAQ summary
     await loadSection('quienes-somos', 'sections/quienes-somos.html');
@@ -638,9 +705,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadSection('equipo', 'sections/equipo.html');
     await populateTeam();
     revealSection('equipo');
-    await loadSection('servicios', 'sections/servicios.html');
-    await populateServices();
-    revealSection('servicios');
     populatePageLinks();
     revealSection('page-links');
     await loadSection('testimonios', 'sections/testimonios.html');
