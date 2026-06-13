@@ -95,7 +95,7 @@
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  top: calc(100% + var(--space-4));
+  top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(-4px);
   background-color: var(--color-bg-base);
@@ -103,10 +103,20 @@
   border-radius: 10px;
   box-shadow: 0 8px 24px rgba(61, 43, 31, 0.10), 0 2px 6px rgba(61, 43, 31, 0.06);
   min-width: 200px;
-  padding: var(--space-3) 0;
+  padding: calc(var(--space-3) + 8px) 0 var(--space-3);
   list-style: none;
   z-index: 200;
   transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
+}
+
+/* Bridge the gap so mouse can travel from nav item to dropdown */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
 }
 
 .nav-item:hover .nav-dropdown,
