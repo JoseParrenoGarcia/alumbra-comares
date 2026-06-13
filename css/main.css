@@ -17,6 +17,7 @@
 @import './page-links.css';
 @import './formacion.css';
 @import './recursos.css';
+@import './transitions.css';
 
 html {
   scroll-behavior: smooth;
