@@ -54,7 +54,7 @@ async function populateServices() {
   if (grid) {
     const linkContainer = document.createElement('div');
     linkContainer.className = 'services-all-link';
-    linkContainer.innerHTML = `<a href="/servicios.html" class="btn btn-secondary">Ver todos los servicios →</a>`;
+    linkContainer.innerHTML = `<a href="servicios.html" class="btn btn-secondary">Ver todos los servicios →</a>`;
     grid.parentNode.insertBefore(linkContainer, grid.nextSibling);
   }
 }
@@ -84,7 +84,6 @@ async function populateEvents() {
       </div>
       <h3 class="event-card__title">${event.title.es}</h3>
       <p class="event-card__desc">${event.description.es}</p>
-      <a href="#contacto" class="btn btn-primary event-card__cta">Solicitar información</a>
     `;
     grid.appendChild(card);
   });
@@ -181,7 +180,7 @@ async function populateHowWeWork() {
   if (isHomepage()) {
     const linkContainer = document.createElement('div');
     linkContainer.className = 'hww-summary-link';
-    linkContainer.innerHTML = `<a href="/como-trabajamos.html" class="hww-all-link">Leer más →</a>`;
+    linkContainer.innerHTML = `<a href="como-trabajamos.html" class="hww-all-link">Leer más →</a>`;
     grid.parentNode.insertBefore(linkContainer, grid.nextSibling);
   }
 }
@@ -318,7 +317,7 @@ async function populateFaqSummary() {
   // Add "ver todas las preguntas" link
   const linkContainer = document.createElement('div');
   linkContainer.className = 'faq-summary-link';
-  linkContainer.innerHTML = `<a href="/faq.html" class="faq-all-link">Ver todas las preguntas →</a>`;
+  linkContainer.innerHTML = `<a href="faq.html" class="faq-all-link">Ver todas las preguntas →</a>`;
   list.parentNode.insertBefore(linkContainer, list.nextSibling);
 }
 
@@ -530,7 +529,6 @@ async function populateEventosPage() {
       </div>
       <h3 class="event-card__title">${event.title.es}</h3>
       <p class="event-card__desc">${event.description.es}</p>
-      <a href="#contacto" class="btn btn-primary event-card__cta">Solicitar información</a>
     `;
     grid.appendChild(card);
   });
@@ -561,7 +559,6 @@ async function populateServiciosPage() {
         <p><strong>Qué incluye:</strong> ${item.includes?.es || '__PLACEHOLDER__'}</p>
       </div>
       <p class="servicios-page-card__price">${priceText}</p>
-      <a href="/#contacto" class="btn btn-primary servicios-page-card__cta">Solicitar información</a>
     `;
     grid.appendChild(card);
   });
@@ -594,13 +591,13 @@ function populatePageLinks() {
   if (!section) return;
   section.innerHTML = `
     <div class="page-links-group">
-      <a href="/como-trabajamos.html" class="page-link-card reveal">
+      <a href="como-trabajamos.html" class="page-link-card reveal">
         <div class="page-link-card__icon" aria-hidden="true">🤝</div>
         <h3 class="page-link-card__title">¿Quieres saber cómo trabajamos?</h3>
         <p class="page-link-card__desc">Conoce nuestro modelo de atención compartida y cómo acompañamos cada etapa.</p>
         <span class="page-link-card__cta">Ver cómo trabajamos →</span>
       </a>
-      <a href="/formacion.html" class="page-link-card reveal">
+      <a href="formacion.html" class="page-link-card reveal">
         <div class="page-link-card__icon" aria-hidden="true">🎓</div>
         <h3 class="page-link-card__title">Formación y credenciales</h3>
         <p class="page-link-card__desc">Conoce la formación, especialización y experiencia de nuestras tres matronas.</p>
@@ -615,19 +612,19 @@ function populatePageLinksSecondary() {
   if (!section) return;
   section.innerHTML = `
     <div class="page-links-group">
-      <a href="/faq.html" class="page-link-card reveal">
+      <a href="faq.html" class="page-link-card reveal">
         <div class="page-link-card__icon" aria-hidden="true">💬</div>
         <h3 class="page-link-card__title">¿Tienes más preguntas?</h3>
         <p class="page-link-card__desc">Resolvemos tus dudas sobre servicios, precios, seguridad y logística.</p>
         <span class="page-link-card__cta">Ver preguntas frecuentes →</span>
       </a>
-      <a href="/eventos.html" class="page-link-card reveal">
+      <a href="eventos.html" class="page-link-card reveal">
         <div class="page-link-card__icon" aria-hidden="true">📅</div>
         <h3 class="page-link-card__title">Eventos y talleres</h3>
         <p class="page-link-card__desc">Próximos talleres y actividades para acompañarte durante el embarazo y la maternidad.</p>
         <span class="page-link-card__cta">Ver eventos →</span>
       </a>
-      <a href="/recursos.html" class="page-link-card reveal">
+      <a href="recursos.html" class="page-link-card reveal">
         <div class="page-link-card__icon" aria-hidden="true">📚</div>
         <h3 class="page-link-card__title">Recursos recomendados</h3>
         <p class="page-link-card__desc">Libros, asociaciones, podcasts y recursos online seleccionados para acompañarte.</p>
@@ -721,5 +718,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadSection('contacto', 'sections/contacto.html');
     await populateContact();
     revealSection('contacto');
+
+    // Re-scroll to hash after all dynamic content is injected
+    if (window.location.hash) {
+      const target = document.getElementById(window.location.hash.slice(1));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 });
