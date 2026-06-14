@@ -665,7 +665,8 @@ function revealSection(id) {
 }
 
 function isHomepage() {
-  return window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+  const p = window.location.pathname;
+  return p === '/' || p.endsWith('/') || p.endsWith('index.html');
 }
 
 function isFaqPage() {
