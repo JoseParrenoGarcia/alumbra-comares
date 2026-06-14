@@ -22,3 +22,56 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* 404 */
+.page-404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.page-404-container {
+  text-align: center;
+  max-width: 600px;
+}
+
+.page-404-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-5xl);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  color: var(--color-terracotta);
+  margin: 0 0 var(--space-6) 0;
+}
+
+@media (min-width: 1024px) {
+  .page-404-heading {
+    font-size: 8rem;
+    margin: 0 0 var(--space-8) 0;
+  }
+}
+
+.page-404-message {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  line-height: var(--leading-body);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-12) 0;
+}
+
+.page-404-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .page-404-actions {
+    flex-direction: row;
+  }
+}
