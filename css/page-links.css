@@ -81,3 +81,24 @@
   color: var(--color-terracotta);
   margin-top: var(--space-2);
 }
+
+/* ── Shared contact CTA section across standalone pages ──────────── */
+.page-cta {
+  background-color: var(--color-bg-soft);
+  padding: var(--space-16) var(--section-padding-x);
+  text-align: center;
+}
+
+.page-cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--text-2xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.page-cta p {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+}
