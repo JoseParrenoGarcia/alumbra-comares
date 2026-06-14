@@ -10,13 +10,19 @@ async function loadSection(id, path) {
 }
 
 async function loadJSON(path) {
-  const res = await fetch(path);
-  if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
-  return res.json();
+  try {
+    const res = await fetch(path);
+    if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+    return res.json();
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 }
 
 async function populateTeam() {
   const data = await loadJSON('content/team.json');
+  if (!data) return;
 
   document.getElementById('team-heading').textContent = data.heading.es;
 
@@ -34,6 +40,7 @@ async function populateTeam() {
 
 async function populateServices() {
   const data = await loadJSON('content/services.json');
+  if (!data) return;
 
   document.getElementById('services-heading').textContent = data.heading.es;
 
@@ -61,6 +68,7 @@ async function populateServices() {
 
 async function populateEvents() {
   const data = await loadJSON('content/events.json');
+  if (!data) return;
   document.getElementById('events-heading').textContent = data.heading.es;
 
   const grid = document.getElementById('events-grid');
@@ -91,6 +99,7 @@ async function populateEvents() {
 
 async function populateTestimonials() {
   const data = await loadJSON('content/testimonials.json');
+  if (!data) return;
 
   document.getElementById('testimonials-heading').textContent = data.heading.es;
 
@@ -119,6 +128,7 @@ async function populateContact() {
     loadJSON('content/contact.json'),
     loadJSON('content/services.json')
   ]);
+  if (!contactData) return;
 
   document.getElementById('contact-heading').textContent = contactData.heading.es;
   document.getElementById('contact-subheading').textContent = contactData.subheading.es;
@@ -146,7 +156,7 @@ async function populateContact() {
 
   // Service interest options
   const select = document.getElementById('contact-service');
-  servicesData.items.forEach(item => {
+  (servicesData?.items || []).forEach(item => {
     const opt = document.createElement('option');
     opt.value = item.title.es;
     opt.textContent = item.title.es;
@@ -156,6 +166,7 @@ async function populateContact() {
 
 async function populateHowWeWork() {
   const data = await loadJSON('content/how-we-work.json');
+  if (!data) return;
 
   document.getElementById('hww-heading').textContent = data.section.es;
   document.getElementById('hww-intro').textContent = data.intro.es;
@@ -191,6 +202,7 @@ function getFriendlyPlaceholder() {
 
 async function populateHowWeWorkPage() {
   const data = await loadJSON('content/how-we-work.json');
+  if (!data) return;
 
   document.getElementById('hww-page-heading').textContent = data.section.es;
   document.getElementById('hww-page-intro').textContent = data.intro.es;
@@ -231,6 +243,7 @@ function renderFriendlyAnswer(item) {
 
 async function populateFaq() {
   const data = await loadJSON('content/faq.json');
+  if (!data) return;
 
   document.getElementById('faq-heading').textContent = data.section.es;
   document.getElementById('faq-intro').textContent = data.intro.es;
@@ -254,6 +267,7 @@ async function populateFaq() {
 
 async function populateFaqPage() {
   const data = await loadJSON('content/faq.json');
+  if (!data) return;
 
   document.getElementById('faq-page-heading').textContent = data.section.es;
   document.getElementById('faq-page-intro').textContent = data.intro.es;
@@ -296,6 +310,7 @@ async function populateFaqPage() {
 
 async function populateFaqSummary() {
   const data = await loadJSON('content/faq.json');
+  if (!data) return;
   const summaryItems = data.items.slice(0, 5);
 
   const list = document.getElementById('faq-list');
@@ -323,6 +338,7 @@ async function populateFaqSummary() {
 
 async function populateFormacion() {
   const data = await loadJSON('content/education.json');
+  if (!data) return;
   const teamData = await loadJSON('content/team.json');
 
   document.getElementById('formacion-section-title').textContent = data.section.es;
@@ -377,6 +393,7 @@ async function populateFormacion() {
 
 async function populateResources() {
   const data = await loadJSON('content/resources.json');
+  if (!data) return;
 
   document.getElementById('recursos-section-title').textContent = data.section.es;
   document.getElementById('recursos-intro').textContent = data.intro.es;
@@ -408,6 +425,7 @@ async function populateResources() {
 
 async function populateRecursosPage() {
   const data = await loadJSON('content/resources.json');
+  if (!data) return;
 
   document.getElementById('recursos-page-heading').textContent = data.section.es;
   document.getElementById('recursos-page-intro').textContent = data.intro.es;
@@ -439,6 +457,7 @@ async function populateRecursosPage() {
 
 async function populateFormacionPage() {
   const data = await loadJSON('content/education.json');
+  if (!data) return;
   const teamData = await loadJSON('content/team.json');
 
   document.getElementById('formacion-page-heading').textContent = data.section.es;
@@ -504,6 +523,7 @@ async function populateFormacionPage() {
 
 async function populateEventosPage() {
   const data = await loadJSON('content/events.json');
+  if (!data) return;
   document.getElementById('eventos-page-heading').textContent = data.heading.es;
   const introEl = document.getElementById('eventos-page-intro');
   if (introEl && data.intro?.es) introEl.textContent = data.intro.es;
@@ -536,6 +556,7 @@ async function populateEventosPage() {
 
 async function populateServiciosPage() {
   const data = await loadJSON('content/services.json');
+  if (!data) return;
 
   document.getElementById('servicios-page-heading').textContent = data.heading.es;
   document.getElementById('servicios-page-intro').textContent = data.intro?.es || '';
@@ -696,30 +717,29 @@ document.addEventListener('DOMContentLoaded', async () => {
     await populateServiciosPage();
     revealSection('servicios-page');
   } else if (isHomepage()) {
-    // Homepage: load all sections including FAQ summary
-    await loadSection('quienes-somos', 'sections/quienes-somos.html');
+    const load = async (id, path) => { try { await loadSection(id, path); } catch(e) { console.error(e); } };
+    await load('quienes-somos', 'sections/quienes-somos.html');
     revealSection('quienes-somos');
-    await loadSection('por-que', 'sections/por-que.html');
+    await load('por-que', 'sections/por-que.html');
     revealSection('por-que');
-    await loadSection('equipo', 'sections/equipo.html');
+    await load('equipo', 'sections/equipo.html');
     await populateTeam();
     revealSection('equipo');
-    await loadSection('servicios', 'sections/servicios.html');
+    await load('servicios', 'sections/servicios.html');
     await populateServices();
     revealSection('servicios');
     populatePageLinks();
     revealSection('page-links');
-    await loadSection('testimonios', 'sections/testimonios.html');
+    await load('testimonios', 'sections/testimonios.html');
     await populateTestimonials();
     initCarousel('testimonials-grid', 'testimonials-dots');
     revealSection('testimonios');
     populatePageLinksSecondary();
     revealSection('page-links-secondary');
-    await loadSection('contacto', 'sections/contacto.html');
+    await load('contacto', 'sections/contacto.html');
     await populateContact();
     revealSection('contacto');
 
-    // Re-scroll to hash after all dynamic content is injected
     if (window.location.hash) {
       const target = document.getElementById(window.location.hash.slice(1));
       if (target) target.scrollIntoView({ behavior: 'smooth' });
