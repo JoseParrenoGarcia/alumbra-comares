@@ -29,8 +29,10 @@ If you are unsure whether something is in scope, it is not in scope.
 | Images and assets | `assets/images/` |
 | Documentation | `docs/` |
 
-**Section names** match the Spanish anchor IDs used in the site:
-`hero`, `quienes-somos`, `por-que`, `equipo`, `servicios`, `eventos`, `testimonios`, `contacto`
+**Homepage runtime sections** match the Spanish anchor IDs used in `index.html`:
+`quienes-somos`, `por-que`, `equipo`, `servicios`, `testimonios`, `contacto`
+
+Standalone pages (`faq.html`, `como-trabajamos.html`, `recursos.html`, `formacion.html`, `eventos.html`, `servicios.html`) render their own page HTML and are populated from JSON by `js/content-loader.js`. Do not assume every standalone page has a matching `sections/*.html` partial.
 
 ---
 
@@ -46,9 +48,22 @@ async function loadSection(id, path) {
 }
 ```
 
-Each milestone creates or modifies files in `sections/`. This keeps `index.html` stable and allows agents to work on sections in parallel without conflicts.
+This pattern applies to the homepage section shells that still live under `sections/`. It keeps `index.html` stable and allows agents to work on homepage sections in parallel without conflicts.
+
+Do not reintroduce homepage-style partials for standalone pages unless a milestone explicitly calls for that architecture change.
 
 If M3 has not been implemented yet, raise this as a blocker before writing section HTML.
+
+---
+
+## Navigation Convention
+
+- `index.html` keeps its static nav because it uses same-page `#hash` anchors
+- Main subpages use the placeholder pattern `<nav class="nav" id="main-nav" data-nav="subpage"></nav>`
+- `js/nav.js` injects the shared subpage nav markup on `DOMContentLoaded`
+- Legal pages (`privacidad.html`, `cookies.html`) keep their simpler static nav unless a milestone explicitly changes that
+
+If you update shared subpage navigation, change `js/nav.js` first instead of copy-editing individual subpages.
 
 ---
 
