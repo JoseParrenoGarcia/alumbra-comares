@@ -105,14 +105,3 @@
   color: var(--color-text-muted);
   font-style: italic;
 }
-
-.formacion-members .reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--transition-gentle), transform var(--transition-gentle);
-}
-
-.formacion-members .reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}

@@ -37,25 +37,6 @@
   transform: translateY(-3px);
 }
 
-.brochure-card.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--transition-gentle), transform var(--transition-gentle);
-}
-
-.brochure-card.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .brochure-card.reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
 .brochure-card__icon {
   font-size: 3rem;
   line-height: 1;

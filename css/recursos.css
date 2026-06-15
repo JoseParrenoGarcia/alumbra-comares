@@ -151,17 +151,6 @@
   pointer-events: none;
 }
 
-.recursos-grid .reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--transition-gentle), transform var(--transition-gentle);
-}
-
-.recursos-grid .reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .brochure-container {
   margin-top: var(--space-16);
 }

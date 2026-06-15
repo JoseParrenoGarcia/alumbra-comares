@@ -142,18 +142,6 @@
   padding: var(--space-12) 0;
 }
 
-/* Staggered reveal animation */
-.event-card.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--transition-gentle), transform var(--transition-gentle);
-}
-
-.event-card.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .event-card.reveal,
   .event-card.reveal.visible {

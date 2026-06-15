@@ -49,25 +49,6 @@
   transform: translateY(-3px);
 }
 
-.testimonial-card.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--transition-gentle), transform var(--transition-gentle);
-}
-
-.testimonial-card.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .testimonial-card.reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
 .testimonial-quote {
   font-family: 'Dancing Script', cursive;
   font-size: var(--text-lg);
