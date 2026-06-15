@@ -42,7 +42,7 @@
 | [M26](milestones/m26.md) | Valencian rollout | planned | Valencian content + extended i18n support |
 | [M27](milestones/m27.md) | Accessibility audit and remediation | planned | Keyboard, screen-reader, motion, and contrast pass |
 | [M28](milestones/m28.md) | 404 and fallback pages | complete | Not-found UX for multi-page and direct-link access |
-| [M29](milestones/m29.md) | Simplification refactor | planned | Codebase cleanup for clarity and maintainability |
+| [M29](milestones/m29.md) | Simplification refactor | complete | Codebase cleanup for clarity and maintainability |
 | [M30](milestones/m30.md) | Frontend regression tests | planned | Test coverage for core static-site behavior |
 | [M31](milestones/m31.md) | React migration audit | planned | Recommendation on staying static vs migrating |
 | [M32](milestones/m32.md) | Mobile UX pass — section sizing and carousels | complete | Right-size large mobile sections; add carousels for testimonials and events |
